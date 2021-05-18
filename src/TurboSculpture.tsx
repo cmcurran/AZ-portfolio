@@ -15,7 +15,7 @@ import { RouteComponentProps } from "@reach/router";
 
 //turn off scroll position on larger screens
 
-export const TurboSculpture = (props: RouteComponentProps) => {
+export const TurboSculpture = (_props: RouteComponentProps) => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
   useScrollPosition(
     ({ prevPos, currPos }: { prevPos: any; currPos: any }) => {

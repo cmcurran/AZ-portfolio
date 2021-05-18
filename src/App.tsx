@@ -1,11 +1,12 @@
 import React from "react";
 import { Router, Link, RouteComponentProps } from "@reach/router";
 import { TurboSculpture } from "./TurboSculpture";
+import styled from "styled-components";
 
-const Home = (props: RouteComponentProps) => (
+const Home = (_props: RouteComponentProps) => (
   <div>
     HOMEPAGE
-    <Link to="turbo-sculpture">Turbo-Sculpture</Link>
+    <LinkStyled to="turbo-sculpture">Turbo-Sculpture</LinkStyled>
   </div>
 );
 
@@ -16,4 +17,7 @@ const App = () => (
   </Router>
 );
 
+const LinkStyled = styled(Link)`
+  color: green;
+`;
 export default App;
