@@ -18,8 +18,22 @@
 
 @font-face {
   font-family: "SuisseItalic";
-  src: local("SuisseBold"),
+  src: local("SuisseItalic"),
     url(./fonts/SuisseIntl-RegularItalic.otf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SuisseWorks";
+  src: local("SuisseWorks"),
+    url(./fonts/SuisseWorks-Regular.otf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SuisseWorksItalic";
+  src: local("SuisseWorksItalic"),
+    url(./fonts/SuisseWorks-RegularItalic.otf) format("truetype");
   font-weight: 400;
 }
 
