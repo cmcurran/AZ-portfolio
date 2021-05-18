@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import styled from "styled-components";
 import Header from "./Components/Header";
 import SectionWithHeader from "./Components/SectionWithHeader";
@@ -52,10 +52,13 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
     [hideOnScroll]
   );
 };
-
+// linear-gradient(90deg,#03ff54 6%,#F0f0f0 26%)
 const Wrapper = styled.div`
-  padding-left: 10vw;
-  padding-left: calc(var(--vw, 1vw) * 10);
+  padding-right: 10vw;
+  padding-right: calc(var(--vw, 1vw) * 10);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
   @media (max-width: 749px) {
     padding-right: 10vw;
