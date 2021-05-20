@@ -5,15 +5,29 @@ export const turboSculpture = {
     bottom: "The case of Banatski Sokolac's Bob Marley monument",
   },
   nav: [
-    { section: "a0", title: "purpose" },
-    { section: "a1", title: "what is degrowth" },
-    { section: "a2", title: "considerations" },
-    { section: "a3", title: "questions" },
-    { section: "b1", title: "glossary" },
-    { section: "b2", title: "bibliography" },
-    { section: "c1", title: "contribute" },
-    { section: "d1", title: "download" },
-    { section: "e1", title: "colophon" },
+    { variant: "header", copy: "contents" },
+    { variant: "list", copy: "Introduction", linkTo: "intro" },
+    {
+      variant: "list",
+      copy: (
+        <>
+          A fighter for freedom
+          <br /> from Banatski Sokolac
+        </>
+      ),
+      linkTo: "main",
+    },
+    { variant: "list", copy: "Conclusion", linkTo: "conclusion" },
+    { variant: "subheader", copy: "Addenda:" },
+    { variant: "list", copy: "What is turbo-folk?", linkTo: "turbofolk" },
+    {
+      variant: "list",
+      copy: "What is turbo-sculpture",
+      linkTo: "turbosculpture",
+    },
+    { variant: "reference", copy: "Endnotes", linkTo: "endnotes" },
+    { variant: "reference", copy: "Bibliography", linkTo: "bibliography" },
+    { variant: "reference", copy: "Colophon", linkTo: "colophon" },
   ],
   sections: [
     {

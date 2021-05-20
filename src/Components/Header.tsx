@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLarge } from "./Nav";
 
 export const Header = ({
   text,
@@ -46,7 +45,7 @@ const Top = styled.span`
 `;
 
 const TopAnd = styled.span`
-  color: #00ff29;
+  color: #03ff54;
   font-family: "Suisse";
 `;
 

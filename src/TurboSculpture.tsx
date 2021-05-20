@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import styled from "styled-components";
 import { Header } from "./Components/Header";
 import SectionWithHeader from "./Components/SectionWithHeader";
-import Nav from "./Components/Nav";
+import { Nav } from "./Components/Nav";
 
 import { useScrollPosition } from "./UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
@@ -38,9 +38,13 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
         </ImgWrapper>
 
         <Wrapper>
-          <Nav content={turboSculpture.nav} show={hideOnScroll} />
-
-          <InnerWrapper>
+          <NavWrapper>
+            <Nav
+              content={turboSculpture.nav}
+              // show={hideOnScroll}
+            />
+          </NavWrapper>
+          <BodyWrapper>
             {turboSculpture.sections.map((section, i) => {
               return (
                 <SectionWithHeader
@@ -52,7 +56,7 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
                 />
               );
             })}
-          </InnerWrapper>
+          </BodyWrapper>
         </Wrapper>
       </OuterWrapper>
     ),
@@ -60,10 +64,30 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
   );
 };
 // linear-gradient(90deg,#03ff54 6%,#F0f0f0 26%)
+
+const BodyWrapper = styled.div`
+  padding: 26vh 4vw 10vh 4vw;
+  padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 4)
+    calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
+
+  @media (max-width: 749px) {
+    padding: 26vh 4vw 10vh 4vw;
+    padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 4)
+      calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
+  }
+`;
+
 const OuterWrapper = styled.div`
   width: 100%;
   background-color: #f0f0f0;
   background-image: linear-gradient(90deg, #03ff54 6%, #f0f0f0 26%);
+`;
+
+const NavWrapper = styled.div`
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 `;
 
 const ImgWrapper = styled.div`
@@ -78,26 +102,5 @@ const ImgWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 10vh 4vw;
-  padding: calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  @media (max-width: 749px) {
-    padding: 10vh 4vw;
-    padding: calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
-  }
-`;
-
-const InnerWrapper = styled.div`
-  width: 55%;
-
-  @media (max-width: 749px) {
-    width: 100%;
-  }
-
-  @media (min-width: 750px) and (max-width: 1249px) {
-    width: 70%;
-  }
 `;
