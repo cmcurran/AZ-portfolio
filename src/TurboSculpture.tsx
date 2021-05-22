@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import styled from "styled-components";
 import { Header } from "./Components/Header";
-import SectionWithHeader from "./Components/SectionWithHeader";
+import { SectionWithHeader } from "./Components/SectionWithHeader";
 import { Nav } from "./Components/Nav";
 
 import { useScrollPosition } from "./UseScrollPosition.js";
@@ -50,7 +50,10 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
                 <SectionWithHeader
                   key={`SectionWithHeader${i}`}
                   section={section.header.section}
-                  header={section.header.title}
+                  header={{
+                    header: section.header.title,
+                    preHeader: section.header.preHeader,
+                  }}
                   variant={section.body.variant}
                   body={section.body.copy}
                 />

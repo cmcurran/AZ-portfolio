@@ -23,10 +23,15 @@ export const Nav = ({
             return <SubHeader>{navItem.copy}</SubHeader>;
 
           case "list":
-            return <List>{navItem.copy}</List>;
+            return <List href={`#${navItem.linkTo}`}>{navItem.copy}</List>;
 
           case "reference":
-            return <Reference>{navItem.copy}</Reference>;
+            return (
+              <Reference href={`#${navItem.linkTo}`}>{navItem.copy}</Reference>
+            );
+
+          default:
+            return null;
         }
       })}
     </Wrapper>
@@ -66,6 +71,7 @@ const Reference = styled.a`
   display: block;
   text-decoration: underline;
   cursor: pointer;
+  color: black;
 
   :hover {
     font-style: italic;

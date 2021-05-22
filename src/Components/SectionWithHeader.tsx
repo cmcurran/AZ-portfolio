@@ -1,39 +1,117 @@
 import styled from "styled-components";
+import { turboSculptureEndnotes } from "../Copy";
 
-const SectionWithHeader = ({
+const findIndexes = (str: string, searchFor: string) => {
+  const indices = [];
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === searchFor) indices.push(i);
+  }
+  return indices;
+};
+
+const embedTitle = (copy: any) => {
+  const addTitleToString = (str: string) => {
+    const copySubstrings = str.split(/(?=\[)/);
+
+    const newCopy = (
+      <>
+        {copySubstrings.map((str: string) => {
+          if (str.charAt(0) !== "[") {
+            return str;
+          }
+          return str.charAt(2) === "]" ? (
+            <>
+              <span
+                className="endNote"
+                title={turboSculptureEndnotes[`${str[1]}` as const]}
+              >
+                {str.substr(0, 3)}
+              </span>{" "}
+              {str.substr(4)}
+            </>
+          ) : (
+            <>
+              <span
+                className="endNote"
+                title={turboSculptureEndnotes[`${str.substr(1, 2)}` as const]}
+              >
+                {str.substr(0, 4)}
+              </span>{" "}
+              {str.substr(5)}
+            </>
+          );
+        })}
+      </>
+    );
+    return newCopy;
+  };
+
+  if (typeof copy === "object") {
+    if (typeof copy.props.children !== "object") {
+      //if copy item has no html inside it will be a string and not an array
+
+      const indexesOfStartFootnote = findIndexes(copy.props.children, "[");
+
+      if (indexesOfStartFootnote.length === 0) {
+        console.log("cmc 1", copy);
+        return copy;
+      }
+      return addTitleToString(copy.props.children);
+    } else {
+      return copy.props.children.map((child: any) => {
+        if (typeof child !== "object") {
+          if (findIndexes(child, "[").length === 0) {
+            console.log("cmc 2", child);
+            return child;
+          } else {
+            console.log("cmc 3", child);
+            return addTitleToString(child);
+          }
+        } else if (findIndexes(child.props.children, "[").length === 0) {
+          console.log("cmc 4", child);
+          return child;
+        } else {
+          console.log("cmc", child.props.children);
+          return addTitleToString(child.props.children);
+        }
+      });
+    }
+  }
+};
+
+export const SectionWithHeader = ({
   section,
   header,
   body,
   variant,
 }: {
   section: string;
-  header: string;
+  header: { header: string; preHeader?: string };
   body: any;
   variant:
     | "xl"
-    | "paragraph"
+    | "paragraphWithEndnotes"
     | "glossary"
-    | "link"
+    | "endnotes"
     | "shareButton"
     | "download"
     | string;
 }) => (
   <Wrapper>
-    <HeaderWrapper id={header}>
-      <Section>{section}</Section>
-      <Header>{header}</Header>
+    <HeaderWrapper id={section}>
+      {/* <Section>{section}</Section> */}
+      {/* {variant === "paragraphWithEndnotes" &&
+        console.log(body, body[0]?.props?.children && body[1]?.props?.children)} */}
+      {header.preHeader && <Header italic>{header.preHeader}</Header>}
+      <Header>{header.header}</Header>
     </HeaderWrapper>
 
-    {(variant === "xl" || variant === "paragraph") &&
-      body.map((item: string, i: number) =>
-        variant === "xl" ? (
-          <BodyXL key={`${section}${i}`}>{item}</BodyXL>
-        ) : (
-          <Body key={`${section}${i}`}>{item}</Body>
-        )
-      )}
+    {variant === "paragraphWithEndnotes" &&
+      body.map((item: string, i: number) => (
+        <Body key={`${section}${i}`}>{embedTitle(item)}</Body>
+      ))}
 
-    {variant === "glossary" && (
+    {/* {variant === "glossary" && (
       <ColumnInnerWrapper>
         {body.map((item: { word: string; definition: string }) => (
           <ColumnInnerWrapper key={item.word}>
@@ -42,33 +120,19 @@ const SectionWithHeader = ({
           </ColumnInnerWrapper>
         ))}
       </ColumnInnerWrapper>
-    )}
+    )} */}
 
-    {variant === "link" && (
+    {variant === "endnotes" && (
       <ColumnInnerWrapper>
-        {body.map((item: { text: string; url?: string }, i: number) =>
-          item.url ? (
-            <BibliographyLink
-              href={item.url}
-              target="_blank"
-              key={`bibliography${i}`}
-            >
-              {item.text}
-            </BibliographyLink>
-          ) : (
-            <BibliographyLink
-              as="div"
-              variant="noLink"
-              key={`bibliography${i}`}
-            >
-              {item.text}
-            </BibliographyLink>
-          )
-        )}
+        {body.map((item: React.ReactNode, i: number) => (
+          <BibliographyListItem key={`endnotes${i}`}>
+            {item}
+          </BibliographyListItem>
+        ))}
       </ColumnInnerWrapper>
     )}
 
-    {variant === "shareButton" && (
+    {/* {variant === "shareButton" && (
       <ColumnInnerWrapper>
         <Body>{body.body}</Body>
         <ButtonLink href={body.button.url} target="_blank">
@@ -114,7 +178,7 @@ const SectionWithHeader = ({
           </ColumnInnerWrapper>
         </HiddenDesktop>
       </>
-    )}
+    )} */}
   </Wrapper>
 );
 
@@ -164,26 +228,27 @@ const ButtonLink = styled.a<{ fullWidth?: boolean }>`
     font-size: calc(var(--vw, 1vw) * 1.9);
   }
 
-  @media (max-width: 749px) {
+  /* @media (max-width: 749px) {
     width: ${({ fullWidth }) => fullWidth && "50%"};
   }
 
   @media (min-width: 750px) {
     width: ${({ fullWidth }) => fullWidth && "95%"};
-  }
+  } */
 `;
 
-const BibliographyLink = styled.a<{ variant?: "noLink" }>`
+const BibliographyListItem = styled.div<{ variant?: "noLink" }>`
   font-family: "Suisse";
 
-  font-size: 1.458vw;
-  font-size: calc(var(--vw, 1vw) * 1.458);
-  color: white;
+  font-size: 0.8333vw;
+  font-size: calc(var(--vw, 1vw) * 0.8333);
   text-decoration: none;
-
   padding-bottom: 0.833vw;
   padding-bottom: calc(var(--vw, 1vw) * 0.833);
-  text-decoration: ${({ variant }) => variant !== "noLink" && "underline"};
+
+  > a {
+    color: black;
+  }
 
   @media (max-width: 549px) {
     font-size: 4vw;
@@ -207,10 +272,6 @@ const BibliographyLink = styled.a<{ variant?: "noLink" }>`
 
     padding-bottom: 1.5vw;
     padding-bottom: calc(var(--vw, 1vw) * 1.5);
-  }
-
-  :hover {
-    color: ${({ variant }) => variant !== "noLink" && "#00ff29"};
   }
 `;
 
@@ -260,9 +321,9 @@ const ColumnInnerWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
-  text-transform: uppercase;
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
 
   padding-bottom: 3.333vw;
   padding-bottom: calc(var(--vw, 1vw) * 3.333);
@@ -315,11 +376,12 @@ const Section = styled.span`
   }
 `;
 
-const Header = styled.span`
+const Header = styled.span<{ italic?: boolean }>`
   font-family: "Suisse";
   /* font-size: 54px; */
   font-size: 2.8125vw;
   font-size: calc(var(--vw, 1vw) * 2.8125);
+  font-style: ${({ italic }) => italic && "italic"};
 
   @media (max-width: 549px) {
     font-size: 6.65vw;
@@ -338,16 +400,16 @@ const Header = styled.span`
 `;
 
 const Body = styled.div`
-  font-family: "Suisse";
+  font-family: "SuisseWorks";
 
-  font-size: 1.458vw;
-  font-size: calc(var(--vw, 1vw) * 1.458);
+  font-size: 1.0416vw;
+  font-size: calc(var(--vw, 1vw) * 1.0416);
 
   padding-bottom: 1.666vw;
   padding-bottom: calc(var(--vw, 1vw) * 1.666);
 
   > a {
-    color: #00ff29;
+    color: #03ff54;
   }
 
   @media (max-width: 549px) {
@@ -395,4 +457,3 @@ const BodyXL = styled(Body)`
     font-size: calc(var(--vw, 1vw) * 2.4);
   }
 `;
-export default SectionWithHeader;

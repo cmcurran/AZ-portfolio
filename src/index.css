@@ -47,37 +47,51 @@
   font-stretch: normal;
 }
 
-/* THAT GREEN 00FF29 */
+/* THAT GREEN #03ff54*/
 html {
   scroll-behavior: smooth;
 }
 
 em,
 i {
-  font-family: "SuisseItalic";
-  font-style: normal;
+  font-family: "SuisseWorks";
+  font-style: italic;
   font-weight: 400;
 }
 
 strong {
-  font-family: "SuisseBold";
+  font-family: "Suisse";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
 }
 
 body {
-  background-color: black;
+  /* background-color: black; */
+  overflow-wrap: break-word;
   color: black;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+div {
+  overflow-wrap: break-word;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.endNote {
+  color: #03ff54;
+  cursor: help;
 }
