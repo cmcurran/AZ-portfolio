@@ -8,19 +8,25 @@
   font-family: "Suisse";
   src: local("Suisse"), url(./fonts/SuisseIntl-Regular.otf) format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
 }
 
 @font-face {
-  font-family: "SuisseBold";
-  src: local("SuisseBold"), url(./fonts/SuisseIntl-Bold.otf) format("truetype");
-  font-weight: 400;
+  font-family: "Suisse";
+  src: local("Suisse"), url(./fonts/SuisseIntl-Bold.otf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
 }
 
 @font-face {
-  font-family: "SuisseItalic";
-  src: local("SuisseItalic"),
+  font-family: "Suisse";
+  src: local("Suisse"),
     url(./fonts/SuisseIntl-RegularItalic.otf) format("truetype");
   font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
 }
 
 @font-face {
@@ -28,13 +34,17 @@
   src: local("SuisseWorks"),
     url(./fonts/SuisseWorks-Regular.otf) format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
 }
 
 @font-face {
-  font-family: "SuisseWorksItalic";
-  src: local("SuisseWorksItalic"),
+  font-family: "SuisseWorks";
+  src: local("SuisseWorks"),
     url(./fonts/SuisseWorks-RegularItalic.otf) format("truetype");
   font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
 }
 
 /* THAT GREEN 00FF29 */

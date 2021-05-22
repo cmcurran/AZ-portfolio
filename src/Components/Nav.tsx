@@ -56,7 +56,8 @@ const Header = styled.div`
 `;
 
 const SubHeader = styled.div`
-  font-family: "SuisseItalic";
+  font-family: "Suisse";
+  font-style: italic;
   padding-bottom: 8px;
 `;
 

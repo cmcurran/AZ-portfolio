@@ -56,5 +56,6 @@ const Mid = styled.div`
 const Bottom = styled.div`
   font-size: 3.387vw;
   font-size: calc(var(--vw, 1vw) * 3.387);
-  font-family: "SuisseWorksItalic";
+  font-family: "SuisseWorks";
+  font-style: italic;
 `;
