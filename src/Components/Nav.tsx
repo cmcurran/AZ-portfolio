@@ -68,7 +68,7 @@ const Reference = styled.a`
   cursor: pointer;
 
   :hover {
-    transform: scale(1.02);
+    font-style: italic;
   }
 
   padding-bottom: 8px;
