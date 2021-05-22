@@ -19,6 +19,9 @@ const embedTitle = (copy: any) => {
           if (str.charAt(0) !== "[") {
             return str;
           }
+          if (str.charAt(1) === "…") {
+            return str;
+          }
           return str.charAt(2) === "]" ? (
             <>
               <span
