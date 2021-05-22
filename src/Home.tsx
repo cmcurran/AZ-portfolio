@@ -43,6 +43,7 @@ export const Home = (_props: RouteComponentProps) => (
 
 const Wrapper = styled.div`
   background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
