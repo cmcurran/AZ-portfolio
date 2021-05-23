@@ -110,10 +110,14 @@ export const SectionWithHeader = ({
     </HeaderWrapper>
 
     {variant === "paragraphWithEndnotes" &&
-      body.map((item: string, i: number) => (
+      body.map((item: React.ReactNode, i: number) => (
         <Body key={`${section}${i}`}>{embedTitle(item)}</Body>
       ))}
 
+    {variant === "paragraph" &&
+      body.map((item: React.ReactNode, i: number) => (
+        <Body key={`${section}${i}`}>{item}</Body>
+      ))}
     {/* {variant === "glossary" && (
       <ColumnInnerWrapper>
         {body.map((item: { word: string; definition: string }) => (
@@ -412,7 +416,7 @@ const Body = styled.div`
   padding-bottom: calc(var(--vw, 1vw) * 1.666);
 
   > a {
-    color: #03ff54;
+    color: black;
   }
 
   @media (max-width: 549px) {

@@ -91,6 +91,14 @@ code {
     monospace;
 }
 
+/* ::selection,
+::-moz-selection {
+  background-color: #03ff54 !important;
+}
+.endNote::selection {
+  background: black;
+} */
+
 .endNote {
   color: #03ff54;
   cursor: help;

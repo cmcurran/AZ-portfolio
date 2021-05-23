@@ -223,8 +223,8 @@ export const turboSculpture = {
             monuments eventually fade into further abstraction, as they
             gradually lose impact? Does the act of monumentalising (particularly
             through traditional means and aesthetics) a traumatic event{" "}
-            <em>actually</em>facilitate remembrance, awareness and discussion of
-            the traumatic event in question? Isn’t it more accurate to
+            <em>actually</em> facilitate remembrance, awareness and discussion
+            of the traumatic event in question? Isn’t it more accurate to
             acknowledge that genuine discourse over these types of events is
             conducted only whenever some “problematic” proposal is made
             public—such as a Bob Marley statue? I would suggest the honest
@@ -451,6 +451,63 @@ export const turboSculpture = {
             the monument, public art. And while the first reaction of many might
             be to ridicule its apparent naiveté, at the end of the day it
             remains the charming and cherished centrepiece of its community.{" "}
+          </>,
+        ],
+      },
+    },
+    {
+      header: {
+        section: "conclusion",
+        title: "Conclusion",
+      },
+      body: {
+        variant: "paragraph",
+        copy: [
+          <>
+            What I have done in this essay is to bring together various concepts
+            in relation to which we can consider turbo-sculpture, a form which
+            is often examined only in relation to turbo-folk, if examined at
+            all. Turbo-sculpture is, unfortunately, still severely
+            under-theorised; relegated to the rare online article, as an
+            entertaining curiosity to be soon forgotten again. Here, I have
+            attempted to enrich the discourse around it, and to bring forth
+            considerations regarding its function; which will be of particular
+            interest and use to the reader interested in artistic strategies in
+            this field.
+          </>,
+          <>
+            Through this monument to Bob Marley and the discourse around it, we
+            explored the search for a new symbolic language in the region, for a
+            new constellation of heroes; this search being a direct consequence
+            of the trauma left by the last Yugoslav wars and the collapse of
+            Yugoslavia. We also examined the Marley monument in relation to the
+            history of monumental works in ex-Yugoslavia, especially the mammoth
+            spomenici commissioned by Tito’s government which played a prominent
+            role in the construction and propagation of a national narrative. In
+            its (relatively) diminutive polyester form, it lies in stark
+            contrast with the established notions of what a monument should
+            be—and especially in relation to the legacy of the spomenici, it
+            appears as a complete negation of that heritage: thus rendering it
+            an anti-monument. We finally proceeded to further look at Banatski
+            Sokolac’s Marley in relation to the concept of the anti-monument, a
+            monument critical towards monumentality itself and toward the
+            utilisation of artistic production to serve the interests of the
+            state.
+          </>,
+          <>
+            When I started this research, I thought the Marley monument was just
+            funny. And it’s not just me—I often get a chuckle or two whenever I
+            bring it up in discussions or presentations. Maybe it <i>is</i>{" "}
+            ridiculous; or, perhaps, <i>uncomfortable</i>? Its playfulness most
+            definitely seems at odds with its context, and by being so, it
+            inevitably brings to light all the reasons why it seems out of
+            place: it stands in stark contrast with the continuing legacies of
+            nationalism and war. Whether this was intentional on behalf of the
+            artist, I am not able to say; and after twenty pages of analysis, I
+            am inclined to believe that it doesn’t matter. What matters is that
+            these legacies are brought to the forefront, and that discussion is
+            had around them. And maybe a polyester Bob Marley is the best lure
+            into this discussion.
           </>,
         ],
       },
@@ -1026,62 +1083,393 @@ export const turboSculpture = {
       },
     },
     {
-      header: { section: "c1", title: "contribute" },
+      header: { section: "bibliography", title: "Bibliography" },
       body: {
-        variant: "shareButton",
-        copy: {
-          body: (
-            <>
-              The aim of <i>The Degrowth Toolbox for Artistic Practices</i> is
-              to become a fully open source publication and resource. Currently,
-              you are invited to contribute with your comments, questions,
-              ideas, references, and experiences through the link below.
-            </>
-          ),
-          button: {
-            copy: "Contribute",
-            url: "https://docs.google.com/forms/d/e/1FAIpQLScQg84c6XIV4i01dVIgGI3RDR7O82iNsJ9bP5MCdqPiP5DftA/viewform",
-          },
-        },
-      },
-    },
-    {
-      header: { section: "d1", title: "download" },
-      body: {
-        variant: "download",
+        variant: "endnotes",
         copy: [
-          {
-            copy: "thedegrowthtoolboxforartisticpractices.pdf",
-            copyShort: ".pdf",
-            url: "thedegrowthtoolboxforartisticpractices.pdf",
-          },
-          {
-            copy: "thedegrowthtoolboxforartisticpractices.epub",
-            copyShort: ".epub",
-            url: "thedegrowthtoolboxforartisticpractices.epub",
-          },
+          <>
+            ‘Banatski Sokolac’, <i>Opština Plandište</i>, [website]{" "}
+            <a
+              target="_blank"
+              href="http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat"
+            ></a>
+            , (accessed 18 December 2019).
+          </>,
+          <>
+            ‘Bosnia unveils Bruce Lee bronze’, <i>BBC News</i>, 26 November
+            2005,{" "}
+            <a
+              target="_blank"
+              href="http://news.bbc.co.uk/2/hi/entertainment/4474316.stm"
+            >
+              http://news.bbc.co.uk/2/hi/entertainment/4474316.stm
+            </a>{" "}
+            (accessed 12 November 2019).
+          </>,
+          <>
+            ‘O Festivalu’, <i>Rock Village</i>, [website]{" "}
+            <a target="_blank" href="http://rockvillage.org/about/">
+              http://rockvillage.org/about/
+            </a>{" "}
+            (accessed 12 November 2019).
+          </>,
+          <>
+            ‘Rock Village 2008’, <i>last.fm</i> [website]{" "}
+            <a
+              target="_blank"
+              href="https://www.last.fm/festival/675960+Rock+Village+2008"
+            >
+              https://www.last.fm/festival/675960+Rock+Village+2008
+            </a>{" "}
+            (accessed 12 November 2019).
+          </>,
+          <>
+            Anderson, B., <i>Imagined Communities</i>, Verso, 1983.
+          </>,
+          <>
+            Archer, R., ‘Assessing Turbofolk Controversies: Popular Music
+            between the Nation and the Balkans’, <i>Southeastern Europe</i>,
+            vol. 36, no. 2, 2012.
+          </>,
+          <>
+            Argyropoulou, N. and Tzirtzilakis, Y. (eds.),{" "}
+            <i>Hell As Pavillion</i>, Kastaniotis, 2013.
+          </>,
+          <>
+            Badovinac, Z. (ed.),{" "}
+            <i>Body and the East: From the 1960s to the Present</i>, MIT Press,
+            1999.
+          </>,
+          <>
+            Baker, C., ‘Music as a Weapon of Ethnopolitical Violence and
+            Conflict: Processes of Ethnic Separation during and after the
+            Break-up of Yugoslavia’, <i>Patterns of Prejudice</i>, vol. 47, no
+            4-5, 2013, p 409-429.
+          </>,
+          <>
+            Baker, C., ‘The concept of turbofolk in Croatia: inclusion/exclusion
+            of national musical identity’, in C. Baker et al (eds.),{" "}
+            <i>
+              Nation in formation: inclusion and exclusion in central and
+              eastern Europe
+            </i>
+            , SSEES Occasional Papers , 2007, p. 139.
+          </>,
+          <>
+            Begić, S. and B. Mraović, ‘Forsaken Monuments and Social Change: The
+            Function of Socialist Monuments in the Post-Yugoslav Space’, in S.
+            L. Moeschberger, and R. A. L. DeZalia (eds.),{" "}
+            <i>Symbols That Bind, Symbols That Divide</i>, Springer
+            International Publishing, 2014, p. 13-37.
+          </>,
+          <>
+            Bilefsky, D., ‘Balkans’ Idolatry Delights Movie Fans and Pigeons’,{" "}
+            <i>The New York Times</i>, 11 November 2007,{" "}
+            <a
+              target="_blank"
+              href="https://www.nytimes.com/2007/11/11/world/europe/11balkans.html"
+            >
+              https://www.nytimes.com/2007/11/11/world/europe/11balkans.html
+            </a>{" "}
+            (accessed 12 November 2019).
+          </>,
+          <>
+            Bjelić, D. I. and O. Savić (eds.),{" "}
+            <i>Balkan as Metaphor: Between Globalization and Fragmentation</i>,
+            MIT Press, 2002.
+          </>,
+          <>
+            Bloom, J., ‘Bob Marley Statue for Serbia’, <i>The New York Times</i>
+            , 25 August 2008,{" "}
+            <a
+              target="_blank"
+              href="https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html"
+            >
+              https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html
+            </a>
+            , (accessed 12 November 2019).
+          </>,
+          <>
+            Brown, M. E. (ed.),{" "}
+            <i>Ethnic Conflict and International Security</i>, Princeton
+            University Press, 1993.
+          </>,
+          <>
+            Cabric, N. et al, ‘Balkan Monuments: The Weird and the Wonderful’,{" "}
+            <i>Balkan Insight</i>, 25 June 2013,{" "}
+            <a
+              target="_blank"
+              href="https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/"
+            >
+              https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/
+            </a>
+            , (accessed 12 November 2019)
+          </>,
+          <>
+            Calotychos, V.,{" "}
+            <i>
+              The Balkan Prospect: Identity, Culture, and Politics in Greece
+              after 1989
+            </i>
+            , Palgrave Macmillan, 2013.
+          </>,
+          <>
+            Čolović, I., ‘A Criminal-National hero? But who else?’, in M.
+            Todorova (ed), <i>Balkan Identities: Nation and Memory</i>, Hurst
+            and Company, 2004.
+          </>,
+          <>
+            Cowan, J. K. (ed.),{" "}
+            <i>Macedonia: The Politics of Identity and Difference</i>, Pluto
+            Press, 2000.
+          </>,
+          <>
+            Critchley, S., <i>On Humour</i>, Routledge, 2002.
+          </>,
+          <>
+            Čvoro, U.,{" "}
+            <i>
+              Turbo-folk music and cultural representations of national identity
+              in former Yugoslavia
+            </i>
+            , Routledge, 2014.
+          </>,
+          <>
+            Danopoulos, C. P. and K. G. Messas (eds.),{" "}
+            <i>Crises in the Balkans</i>, Westview Press, 1997.
+          </>,
+          <>
+            Dimitrijević, B., ‘"Turbo-Folk Made Me Do It!": Schizo-anthropology
+            of the Genre’, lecture at Moderna Gallerija, Ljubljana, 26 August
+            2019,{" "}
+            <a
+              target="_blank"
+              href="http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431"
+            >
+              http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431
+            </a>
+            , (accessed 23 November 2019).
+          </>,
+          <>
+            Djokić, D. (ed.),{" "}
+            <i>Yugoslavism: Histories of a Failed Idea 1918-1992</i>, C. Hurst &
+            Co., 2003.
+          </>,
+          <>
+            Dogo, M. and G. Franzinetti (eds.),{" "}
+            <i>
+              Disrupting and Reshaping: Early Stages of Nation-Building in the
+              Balkans
+            </i>
+            , Editore Ravenna, 2002.
+          </>,
+          <>
+            Domanović, A., <i>Turbo Sculpture, 2010 - 2013</i>, [online video],
+            2014,{" "}
+            <a target="_blank" href="https://vimeo.com/95907707">
+              https://vimeo.com/95907707
+            </a>
+            , (Accessed 28 November 2019).
+          </>,
+          <>
+            Graubard, S. R. (ed.), <i>A New Europe for the Old?</i>, Transaction
+            Publishers, 1999.
+          </>,
+          <>
+            Hatzopoulos, P.,{" "}
+            <i>
+              The Balkans Beyond Nationalism and Identity: International
+              Relations and Ideology
+            </i>
+            , I.B.Tauris, 2008.
+          </>,
+          <>
+            Hlavajova, M. and S. Sheikh (eds.),{" "}
+            <i>Former West: Art and the Contemporary After 1989</i>, MIT Press,
+            2016.
+          </>,
+          <>
+            Hoepken, W., ‘War, Memory, and Education in a Fragmented Society:
+            The Case of Yugoslavia’, in{" "}
+            <i>East European Politics and Societies</i>, vol. 13, no. 1, 1998.
+          </>,
+          <>
+            Jauković, M., ‘To Share or to Keep: The Afterlife of Yugoslavia’s
+            Heritage and the Contemporary Heritage Management Practices’,{" "}
+            <i>Croatian Political Science Review</i>, vol. 51, no. 4, 2014.
+          </>,
+          <>
+            Karakasidou, A., ‘Affections of a Greek Hero: Pavlos Melas and
+            heroic representations in Greece’, in M. Todorova (ed),{" "}
+            <i>Balkan Identities: Nation and Memory</i>, Hurst and Company,
+            2004.
+          </>,
+          <>
+            Kisić, V., <i>Governing Heritage Dissonance</i>, European Cultural
+            Foundation, 2013.
+          </>,
+          <>
+            Komar & Melamid, ‘Letter to Boris Yeltsin’, in Independent Curators
+            Incorporated (ed.), <i>Monumental Propaganda</i>, Independent
+            Curators Incorporated, 1994.
+          </>,
+          <>
+            Kronja, I., ‘Smrtonosni sjaj: masovna psihologija i estetika
+            turbo-folka’ (‘The Fatal Glow: Mass Psychology and Aesthetics of
+            Turbo-folk Subculture’), Belgrade, Tehnocratia, 2001, cited in U.
+            Čvoro,{" "}
+            <i>
+              Turbo-folk music and cultural representations of national identity
+              in former Yugoslavia
+            </i>
+            , Routledge, 2014.
+          </>,
+          <>
+            Kronja, I., ‘Turbo Folk and Dance Music in 1990s Serbia: Media,
+            Ideology and the Production of Spectacle’,{" "}
+            <i>The Anthropology of East Europe Review</i>, vol. 22, no. 1, 2004.
+          </>,
+          <>
+            Lampe, J. and M. Mazower (eds.),{" "}
+            <i>
+              Ideologies and National Identities: The Case of Twentieth-Century
+              Southeastern Europe
+            </i>
+            , Central European University Press, 2006.
+          </>,
+          <>
+            Longinović, T., ‘Post-Oriental Avliya: Translating the Balkans into
+            Globalese.’, in T. Aleksić (ed.),{" "}
+            <i>Mythistory and Narratives of the Nation in the Balkans</i>,
+            Cambridge Scholars Press, 2007, p. 155-169.
+          </>,
+          <>
+            Michaels, S., ‘Bob Marley statue unites Serbs and Croats’,{" "}
+            <i>The Guardian</i>, 25 August 2008,{" "}
+            <a
+              target="_blank"
+              href="https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia"
+            >
+              https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia
+            </a>{" "}
+            (accessed 12 November 2019).
+          </>,
+          <>
+            Mlekuž, J., <i>Burek: A Culinary Metaphor</i>, Budapest: Central
+            European University Press, 2015.
+          </>,
+          <>
+            Niebyl, D., ‘What are their present-day conditions?’,{" "}
+            <i>Spomenik Database</i>, [website]{" "}
+            <a
+              target="_blank"
+              href="https://www.spomenikdatabase.org/present-day-conditions"
+            >
+              https://www.spomenikdatabase.org/present-day-conditions
+            </a>
+            , 2016, (accessed 1 December 2019).
+          </>,
+          <>
+            Niebyl, D., <i>Spomenik Monument Database</i>, FUEL Publishing,
+            2018.
+          </>,
+          <>
+            Pavlowitch, S. K., <i>A History of the Balkans: 1804-1945</i>,
+            Addison Wesley Longman, 1999.
+          </>,
+          <>
+            Poulton, H., <i>The Balkans: Minorities and States in Conflict</i>,
+            Minority Rights Publications, 1993.
+          </>,
+          <>
+            Pourgouris, M., ‘Ulysses’ Gaze and the myth of Balkan history’ in T.
+            Aleksić (ed.),{" "}
+            <i>Mythistory and Narratives of the Nation in the Balkans</i>,
+            Cambridge Scholars Press, 2007.
+          </>,
+          <>
+            Ramet, S. P., <i>Balkan Babel</i>, Westview Press, 1999.
+          </>,
+          <>
+            Rasmussen, L. V., ‘From Source to Commodity: Newly-Composed Folk
+            Music of Yugoslavia’, <i>Popular Music</i>, vol. 14, no.2, 1995.
+          </>,
+          <>
+            Schierup, C.-U. (ed.),{" "}
+            <i>
+              Scramble for the Balkans: nationalism, globalism and the political
+              economy of reconstruction
+            </i>
+            , Macmillan Press Ltd, 1999.
+          </>,
+          <>
+            Stevens, Q., K. A. Franck, R. Fazakerley, ‘Counter-Monuments: The
+            Anti-Monumental and the Dialogic’,{" "}
+            <i>The Journal of Architecture</i>, vol. 17, no. 6, 2012, p 951.
+          </>,
+          <>
+            Šuvaković, M., ‘Impossible Histories’, in D. Djurić and M. Šuvaković
+            (eds.),{" "}
+            <i>
+              Impossible Histories: Historical Avant-Gardes, Neo-Avant-Gardes,
+              and Post-Avant-Gardes in Yugoslavia
+            </i>
+            , 1918-1991, MIT Press, 2003.
+          </>,
+          <>
+            Todorova, M., <i>Imagining the Balkans</i>, updated edn, Oxford
+            University Press, 2009.
+          </>,
+          <>
+            Ugrešić, D., <i>The Culture of Lies</i>, Pennsylvania State
+            University Press, 1998.
+          </>,
+          <>
+            Volčič, Z. and K. Erjavec, ‘The Paradox of Ceca and the Turbo-Folk
+            Audience’, <i>Popular Communication</i>, vol. 8, no.2, 2010.
+          </>,
+          <>
+            Volcic, Z., ‘The Struggle to Express, Create and Represent in the
+            Balkans’, in H. K. Anheier, Y. R. Isar (eds.),{" "}
+            <i>Cultural Expression, Creativity and Innovation</i>, 2010, SAGE
+            Publications, vol. 3.
+          </>,
+          <>
+            VVORK, ‘IMG MGMT: Turbo sculpture’, <i>Art F City</i>, 24 August
+            2009,{" "}
+            <a
+              target="_blank"
+              href="http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/"
+            >
+              http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/
+            </a>{" "}
+            (accessed 28 November 2019).
+          </>,
+          <>
+            Young, J. E., ‘The Monument in Ruins’, in Independent Curators
+            Incorporated (ed.) <i>Monumental Propaganda</i>, Independent
+            Curators Incorporated, 1994.
+          </>,
+          <>
+            Αντωνιάδης, Χ. (ed.), <i>Βαλκάνια, η Μεγάλη Τρικυμία</i>, Εκδόσεις
+            Κασταλία, 2018.
+          </>,
         ],
       },
     },
+
     {
-      header: { section: "e1", title: "colophon" },
+      header: { section: "colophon", title: "colophon" },
       body: {
         variant: "paragraph",
         copy: [
-          "Written by Alexandra Papademetriou.",
-          "Built by Charlotte Curran.",
-          "Special thanks to Reyhaneh Mirjahani.",
           <>
-            Made during the 1st{" "}
-            <a
-              href="https://wendy.network/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              wendy.network
-            </a>{" "}
-            virtual residency, March 2021.
+            Essay by Alexandra Papademetriou, May 2021, on the occasion of the
+            exhibition <i>Monument to Balkan Brotherhood</i>, DC Krov, Belgrade.
           </>,
+          "Originally written in 2019 within the context of the Fine Art MFA of HDK-Valand, University of Gothenburg.",
+          "Page built by Charlotte Curran.",
+
           <>
             <a
               rel="license"
