@@ -248,7 +248,9 @@ const NavWrapperSmall = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-left: 5rem;
+
+  padding-left: 4.1666vw;
+  padding-left: calc(var(--vw, 1vw) * 4.1666);
 `;
 
 const IconWrapper = styled.div<{ show: boolean }>`

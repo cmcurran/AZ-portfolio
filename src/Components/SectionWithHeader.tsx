@@ -224,11 +224,29 @@ const Image = styled.img`
 const Caption = styled.div`
   font-family: "Suisse";
   padding-bottom: 6rem;
+  font-size: 0.5208vw;
+  font-size: calc(var(--vw, 1vw) * 0.5208);
+  /* font-size: 12px; */
 
-  font-size: 0.625vw;
-  font-size: calc(var(--vw, 1vw) * 0.625);
+  /* font-size: 0.625vw;
+  font-size: calc(var(--vw, 1vw) * 0.625); */
   > a {
     color: #03ff54;
+  }
+
+  @media (max-width: 549px) {
+    font-size: 2.5vw;
+    font-size: calc(var(--vw, 1vw) * 2.5);
+  }
+
+  @media (min-width: 550px) and (max-width: 749px) {
+    font-size: 1.45vw;
+    font-size: calc(var(--vw, 1vw) * 1.45);
+  }
+
+  @media (min-width: 750px) and (max-width: 1249px) {
+    font-size: 0.95vw;
+    font-size: calc(var(--vw, 1vw) * 0.95);
   }
 `;
 
