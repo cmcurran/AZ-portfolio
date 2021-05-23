@@ -187,7 +187,7 @@ export const turboSculpture = {
             years: they are often perceived as international, a-historical,
             “pure”. To further illustrate this, another citizen of Mostar had
             this to say when asked about the Bruce Lee monument:
-            <blockquote>
+            <blockquote style={{ marginTop: "2em", marginBottom: "2em" }}>
               <i>
                 the purpose here is to understand Lee as a clean human! I mean …
                 he’s … not Croatian, nor a Serb … he is not a Catholic, not

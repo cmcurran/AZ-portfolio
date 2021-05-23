@@ -115,7 +115,7 @@ export const SectionWithHeader = ({
       body.map((item: React.ReactNode, i: number) => {
         if (item === "IMAGES") {
           return (
-            <div>
+            <ImageWrapper>
               <Image
                 src={birdseye}
                 alt="An aerial photograph of the village of Banatski Sokolac, surrounded by fields."
@@ -134,7 +134,7 @@ export const SectionWithHeader = ({
                 </a>
                 .
               </Caption>
-            </div>
+            </ImageWrapper>
           );
         }
 
@@ -216,6 +216,10 @@ export const SectionWithHeader = ({
   </Wrapper>
 );
 
+const ImageWrapper = styled.div`
+  padding-top: 3rem;
+`;
+
 const Image = styled.img`
   padding-bottom: 2rem;
   width: 80%;
@@ -223,7 +227,7 @@ const Image = styled.img`
 
 const Caption = styled.div`
   font-family: "Suisse";
-  padding-bottom: 6rem;
+  padding-bottom: 5rem;
   font-size: 0.5208vw;
   font-size: calc(var(--vw, 1vw) * 0.5208);
   /* font-size: 12px; */
@@ -306,7 +310,7 @@ const ButtonLink = styled.a<{ fullWidth?: boolean }>`
 `;
 
 const BibliographyListItem = styled.div<{ variant?: "noLink" }>`
-  font-family: "Suisse";
+  font-family: "Suisse", Arial, Helvetica, sans-serif;
 
   font-size: 0.8333vw;
   font-size: calc(var(--vw, 1vw) * 0.8333);
