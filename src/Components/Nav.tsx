@@ -61,18 +61,20 @@ export const NavSmall = ({
       <WrapperSmall open={isOpen}>
         <InnerWrapperSmall>
           <NavWrapperSmall>
-            {/* <Header>nav</Header> */}
             {content.map((navItem, i) => {
               switch (navItem.variant) {
                 case "header":
-                  return <Header>{navItem.copy}</Header>;
+                  return <Header key={`navItem${i}`}>{navItem.copy}</Header>;
 
                 case "subheader":
-                  return <SubHeader>{navItem.copy}</SubHeader>;
+                  return (
+                    <SubHeader key={`navItem${i}`}>{navItem.copy}</SubHeader>
+                  );
 
                 case "list":
                   return (
                     <List
+                      key={`navItem${i}`}
                       href={`#${navItem.linkTo}`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -83,6 +85,7 @@ export const NavSmall = ({
                 case "reference":
                   return (
                     <Reference
+                      key={`navItem${i}`}
                       href={`#${navItem.linkTo}`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -106,8 +109,6 @@ export const NavSmall = ({
 
 const Wrapper = styled.div`
   font-size: 18px;
-  /* font-size: 0.9375vw;
-  font-size: calc(var(--vw, 1vw) * 0.9375); */
 
   padding-right: 8.333vw;
   padding-right: calc(var(--vw, 1vw) * 8.333);
@@ -125,9 +126,7 @@ const Header = styled.div`
   text-transform: uppercase;
   padding-bottom: 16px;
   font-size: 20px;
-  /* 
-  font-size: 1.0416vw;
-  font-size: calc(var(--vw, 1vw) * 1.0416); */
+
   @media (max-width: 750px) {
     font-size: 5.563vw;
     font-size: calc(var(--vw, 1vw) * 5.563);
@@ -178,42 +177,6 @@ const List = styled(Reference)`
   }
 `;
 
-// const Nav = ({
-//   content,
-
-//   show,
-// }: {
-//   content: { section: string; title: string }[];
-
-//   show: boolean;
-// }) => {
-//   return (
-//     <>
-//       <NavSmall content={content} show={show} />
-//     </>
-//   );
-// };
-
-// export const NavLarge = ({
-//   content,
-// }: {
-//   content: {
-//     section: string;
-//     title: string;
-//   }[];
-// }) => (
-//   <Wrapper>
-//     <Header>nav</Header>
-
-//     {content.map((item, i) => (
-//       <NavLink href={`#${item.title}`} key={`NavLinkLarge${i}`}>
-//         <SectionTag>{item.section}</SectionTag>
-//         {item.title}
-//       </NavLink>
-//     ))}
-//   </Wrapper>
-// );
-
 const WrapperSmall = styled.div<{ open: boolean }>`
   opacity: ${({ open }) => (open ? "1" : "0")};
   transition: all 0.2s ease-in;
@@ -254,7 +217,6 @@ const NavWrapperSmall = styled.div`
 `;
 
 const IconWrapper = styled.div<{ show: boolean }>`
-  /* background-color: black; */
   position: fixed;
   cursor: pointer;
 
@@ -276,95 +238,5 @@ const IconWrapper = styled.div<{ show: boolean }>`
 
   @media (min-width: 750px) {
     display: none;
-  }
-`;
-
-// const Wrapper = styled.div<{ top?: number | null; height?: number | null }>`
-//   display: flex;
-//   flex-direction: column;
-//   position: fixed;
-
-//   @media (max-width: 749px) {
-//     display: none;
-//   }
-
-//   @media (max-width: 1249px) {
-//   }
-// `;
-
-// const Header = styled.div`
-//   color: #00ff29;
-//   font-family: "MG Mono";
-//   text-transform: uppercase;
-
-//   font-size: 0.625vw;
-//   font-size: calc(var(--vw, 1vw) * 0.625);
-
-//   padding-bottom: 0.208vw;
-//   padding-bottom: calc(var(--vw, 1vw) * 0.208);
-
-//   @media (max-width: 749px) {
-//     font-size: 4vw;
-//     font-size: calc(var(--vw, 1vw) * 4);
-//   }
-
-//   @media (min-width: 750px) and (max-width: 1249px) {
-//     font-size: 1vw;
-//     font-size: calc(var(--vw, 1vw) * 1);
-//     padding-bottom: 0vw;
-//   }
-// `;
-
-// const SectionTag = styled(Header)`
-//   position: absolute;
-
-//   left: -1vw;
-//   left: calc(var(--vw, 1vw) * -1);
-
-//   top: 0.475vh;
-//   top: calc(var(--vh, 1vh) * 0.475);
-
-//   @media (max-width: 749px) {
-//     font-size: 3vw;
-//     font-size: calc(var(--vw, 1vw) * 3);
-
-//     left: -5vw;
-//     left: calc(var(--vw, 1vw) * -5);
-
-//     top: 1.2vh;
-//     top: calc(var(--vw, 1vw) * 1.2);
-//   }
-
-//   @media (min-width: 750px) and (max-width: 1249px) {
-//     left: -1.5vw;
-//     left: calc(var(--vw, 1vw) * -1.5);
-//     top: 0.3vh;
-//     top: calc(var(--vh, 1vh) * 0.3);
-//   }
-// `;
-
-const NavLink = styled.a`
-  text-decoration: none;
-  color: white;
-  font-family: "Suisse";
-
-  text-transform: uppercase;
-  position: relative;
-
-  font-size: 1.458vw;
-  font-size: calc(var(--vw, 1vw) * 1.458);
-
-  @media (max-width: 749px) {
-    font-size: 7vw;
-    font-size: calc(var(--vw, 1vw) * 7);
-  }
-
-  @media (min-width: 750px) and (max-width: 1249px) {
-    font-size: 1.9vw;
-    font-size: calc(var(--vw, 1vw) * 1.9);
-  }
-  :hover {
-    color: #00ff29;
-    text-decoration: underline;
   }
 `;

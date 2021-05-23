@@ -38,7 +38,6 @@ export const Home = (_props: RouteComponentProps) => (
         .
       </div>
     </InnerWrapper>
-    {/* <LinkStyled to="turbo-sculpture">Turbo-Sculpture</LinkStyled> */}
   </Wrapper>
 );
 
@@ -53,7 +52,6 @@ const Wrapper = styled.div`
 
 const InnerWrapper = styled.div`
   width: 50%;
-  /* min-width: 600px; */
   font-family: "MG Mono";
   display: flex;
   flex-direction: column;
@@ -61,7 +59,6 @@ const InnerWrapper = styled.div`
 
   @media (max-width: 749px) {
     width: 80%;
-    /* min-width: 300px; */
     font-size: 14px;
   }
 `;
