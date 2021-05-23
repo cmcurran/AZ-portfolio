@@ -1,7 +1,4 @@
-import {
-  // Link,
-  RouteComponentProps,
-} from "@reach/router";
+import { Link, RouteComponentProps } from "@reach/router";
 import styled from "styled-components";
 
 export const Home = (_props: RouteComponentProps) => (
@@ -15,7 +12,11 @@ export const Home = (_props: RouteComponentProps) => (
         In the meantime, check out my ongoing projects at{" "}
         <ExternalLink href="https://degrowthtoolbox.net/" target="_blank">
           degrowthtoolbox.net
-        </ExternalLink>
+        </ExternalLink>{" "}
+        and{" "}
+        <LinkStyled to="turbosculpture">
+          alexandrapapademetriou.com/turbosculpture
+        </LinkStyled>
         .
       </div>
       <div style={{ padding: "1rem" }} />
@@ -51,7 +52,7 @@ const Wrapper = styled.div`
 `;
 
 const InnerWrapper = styled.div`
-  width: 28%;
+  width: 50%;
   /* min-width: 600px; */
   font-family: "MG Mono";
   display: flex;
@@ -73,11 +74,14 @@ const Header = styled.h1`
   }
 `;
 
-// const LinkStyled = styled(Link)`
-//   color: #00ff29;
-//   font-family: "MG Mono";
-//   text-decoration: none;
-// `;
+const LinkStyled = styled(Link)`
+  color: #00ff29;
+  font-family: "MG Mono";
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
+`;
 
 const ExternalLink = styled.a`
   color: #00ff29;
