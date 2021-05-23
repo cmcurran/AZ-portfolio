@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { turboSculptureEndnotes } from "../Copy";
+import birdseye from "../Images/birdseye.jpg";
+import musiciansWithMarley from "../Images/musiciansWithMarley.jpg";
 
 const findIndexes = (str: string, searchFor: string) => {
   const indices = [];
@@ -89,7 +91,7 @@ export const SectionWithHeader = ({
   variant,
 }: {
   section: string;
-  header: { header: string; preHeader?: string };
+  header: { header: React.ReactNode; preHeader?: string };
   body: any;
   variant:
     | "xl"
@@ -110,9 +112,18 @@ export const SectionWithHeader = ({
     </HeaderWrapper>
 
     {variant === "paragraphWithEndnotes" &&
-      body.map((item: React.ReactNode, i: number) => (
-        <Body key={`${section}${i}`}>{embedTitle(item)}</Body>
-      ))}
+      body.map((item: React.ReactNode, i: number) => {
+        if (item === "IMAGES") {
+          return (
+            <div>
+              <Image src={birdseye} />
+              <Image src={musiciansWithMarley} />
+            </div>
+          );
+        }
+
+        return <Body key={`${section}${i}`}>{embedTitle(item)}</Body>;
+      })}
 
     {variant === "paragraph" &&
       body.map((item: React.ReactNode, i: number) => (
@@ -188,6 +199,11 @@ export const SectionWithHeader = ({
     )} */}
   </Wrapper>
 );
+
+const Image = styled.img`
+  padding-bottom: 2rem;
+  width: 80%;
+`;
 
 const HiddenMobile = styled.div`
   display: none;

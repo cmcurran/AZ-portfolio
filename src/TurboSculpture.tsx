@@ -69,6 +69,7 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
 // linear-gradient(90deg,#03ff54 6%,#F0f0f0 26%)
 
 const BodyWrapper = styled.div`
+  width: 55%;
   padding: 26vh 4vw 10vh 4vw;
   padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 4)
     calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);

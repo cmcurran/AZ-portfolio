@@ -97,7 +97,12 @@ export const turboSculpture = {
     {
       header: {
         section: "main",
-        title: "A fighter for freedom from Banatski Sokolac",
+        title: (
+          <>
+            A fighter for freedom
+            <br /> from Banatski Sokolac
+          </>
+        ),
       },
       body: {
         variant: "paragraphWithEndnotes",
@@ -1459,7 +1464,7 @@ export const turboSculpture = {
     },
 
     {
-      header: { section: "colophon", title: "colophon" },
+      header: { section: "colophon", title: "Colophon" },
       body: {
         variant: "paragraph",
         copy: [
