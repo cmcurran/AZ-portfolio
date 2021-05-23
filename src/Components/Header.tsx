@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Header = ({
   text,
 }: {
-  text: { top: string[]; mid: string; bottom: string };
+  text: { top: string[]; mid: string; bottom: React.ReactNode };
 }) => {
   return (
     <Wrapper>
@@ -35,8 +35,10 @@ const Wrapper = styled.div`
   padding: 0 calc(var(--vw, 1vw) * 4);
 
   @media (max-width: 749px) {
-    padding: 0 4vw;
-    padding: 0 calc(var(--vw, 1vw) * 4);
+    padding: 0 8vw;
+    padding: 0 calc(var(--vw, 1vw) * 8);
+    font-size: 8vw;
+    font-size: calc(var(--vw, 1vw) * 8);
   }
 `;
 
@@ -51,6 +53,10 @@ const TopAnd = styled.span`
 
 const Mid = styled.div`
   font-family: "SuisseWorks";
+
+  @media (max-width: 749px) {
+    padding-bottom: 2rem;
+  }
 `;
 
 const Bottom = styled.div`
@@ -58,4 +64,9 @@ const Bottom = styled.div`
   font-size: calc(var(--vw, 1vw) * 3.387);
   font-family: "SuisseWorks";
   font-style: italic;
+
+  @media (max-width: 749px) {
+    font-size: 5.1vw;
+    font-size: calc(var(--vw, 1vw) * 5.1);
+  }
 `;

@@ -116,8 +116,24 @@ export const SectionWithHeader = ({
         if (item === "IMAGES") {
           return (
             <div>
-              <Image src={birdseye} />
-              <Image src={musiciansWithMarley} />
+              <Image
+                src={birdseye}
+                alt="An aerial photograph of the village of Banatski Sokolac, surrounded by fields."
+              />
+              <Image
+                src={musiciansWithMarley}
+                alt="A group of 7 musicians posing around  the Bob Marley monument."
+              />
+              <Caption>
+                Images of Banatski Sokolac and the Bob Marley monument from the{" "}
+                <a
+                  target="_blank"
+                  href="http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat"
+                >
+                  Opština Plandište website
+                </a>
+                .
+              </Caption>
             </div>
           );
         }
@@ -203,6 +219,17 @@ export const SectionWithHeader = ({
 const Image = styled.img`
   padding-bottom: 2rem;
   width: 80%;
+`;
+
+const Caption = styled.div`
+  font-family: "Suisse";
+  padding-bottom: 6rem;
+
+  font-size: 0.625vw;
+  font-size: calc(var(--vw, 1vw) * 0.625);
+  > a {
+    color: #03ff54;
+  }
 `;
 
 const HiddenMobile = styled.div`

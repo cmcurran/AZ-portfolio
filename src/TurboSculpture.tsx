@@ -1,8 +1,8 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import styled from "styled-components";
 import { Header } from "./Components/Header";
 import { SectionWithHeader } from "./Components/SectionWithHeader";
-import { Nav } from "./Components/Nav";
+import { NavLarge, NavSmall } from "./Components/Nav";
 
 import { useScrollPosition } from "./UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
@@ -33,13 +33,18 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
     () => (
       <OuterWrapper onClick={() => setHideOnScroll(true)}>
         <Header text={turboSculpture.header} />
+        <NavSmall content={turboSculpture.nav} show={hideOnScroll} />
         <ImgWrapper>
-          <img src={marleyMaps} style={{ width: "90%" }} />
+          <img
+            src={marleyMaps}
+            style={{ width: "90%" }}
+            alt="A Google Maps screenshot of the Bob Marley monument in Banatski Sokolac, dated July 2013."
+          />
         </ImgWrapper>
 
         <Wrapper>
           <NavWrapper>
-            <Nav
+            <NavLarge
               content={turboSculpture.nav}
               // show={hideOnScroll}
             />
@@ -69,22 +74,29 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
 // linear-gradient(90deg,#03ff54 6%,#F0f0f0 26%)
 
 const BodyWrapper = styled.div`
-  width: 55%;
   padding: 26vh 4vw 10vh 4vw;
   padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 4)
     calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
+  max-width: 100%;
 
   @media (max-width: 749px) {
-    padding: 26vh 4vw 10vh 4vw;
-    padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 4)
-      calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 4);
+    padding: 26vh 8vw 10vh 8vw;
+    padding: calc(var(--vh, 1vh) * 26) calc(var(--vw, 1vw) * 8)
+      calc(var(--vh, 1vh) * 10) calc(var(--vw, 1vw) * 8);
+  }
+
+  @media (min-width: 750px) {
+    width: 55%;
   }
 `;
 
 const OuterWrapper = styled.div`
   width: 100%;
   background-color: #f0f0f0;
-  background-image: linear-gradient(90deg, #03ff54 6%, #f0f0f0 26%);
+
+  @media (min-width: 750px) {
+    background-image: linear-gradient(90deg, #03ff54 6%, #f0f0f0 26%);
+  }
 `;
 
 const NavWrapper = styled.div`
@@ -100,8 +112,8 @@ const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 749px) {
-    padding: 0 4vw;
-    padding: 0 calc(var(--vw, 1vw) * 4);
+    padding: 0 8vw;
+    padding: 0 calc(var(--vw, 1vw) * 8);
   }
 `;
 

@@ -5,6 +5,8 @@ import "./fonts/MonumentGrotesk-Mono.otf";
 import "./fonts/SuisseIntl-Regular.otf";
 import "./fonts/SuisseIntl-Bold.otf";
 import "./fonts/SuisseIntl-RegularItalic.otf";
+import "./fonts/SuisseWorks-Book.otf";
+import "./fonts/SuisseWorks-BookItalic.otf";
 import App from "./App";
 
 ReactDOM.render(

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IconHamburger, IconX } from "./NavIcons";
 
 // "header" | "subheader" | "list" | "reference";
-export const Nav = ({
+export const NavLarge = ({
   content,
 }: {
   content: {
@@ -38,6 +38,72 @@ export const Nav = ({
   );
 };
 
+export const NavSmall = ({
+  content,
+  show,
+}: {
+  content: {
+    variant: string;
+    copy: React.ReactNode;
+    linkTo?: string;
+  }[];
+  show: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  return (
+    <>
+      {!isOpen && (
+        <IconWrapper onClick={() => setIsOpen(true)} show={show}>
+          <IconHamburger />
+        </IconWrapper>
+      )}
+      <WrapperSmall open={isOpen}>
+        <InnerWrapperSmall>
+          <NavWrapperSmall>
+            {/* <Header>nav</Header> */}
+            {content.map((navItem, i) => {
+              switch (navItem.variant) {
+                case "header":
+                  return <Header>{navItem.copy}</Header>;
+
+                case "subheader":
+                  return <SubHeader>{navItem.copy}</SubHeader>;
+
+                case "list":
+                  return (
+                    <List
+                      href={`#${navItem.linkTo}`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {navItem.copy}
+                    </List>
+                  );
+
+                case "reference":
+                  return (
+                    <Reference
+                      href={`#${navItem.linkTo}`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {navItem.copy}
+                    </Reference>
+                  );
+
+                default:
+                  return null;
+              }
+            })}
+          </NavWrapperSmall>
+        </InnerWrapperSmall>
+        <IconWrapper onClick={() => setIsOpen(false)} show={true}>
+          <IconX />
+        </IconWrapper>
+      </WrapperSmall>
+    </>
+  );
+};
+
 const Wrapper = styled.div`
   font-size: 18px;
   /* font-size: 0.9375vw;
@@ -48,6 +114,10 @@ const Wrapper = styled.div`
   padding-top: 246.74px;
   padding-left: 6.666vw;
   padding-left: calc(var(--vw, 1vw) * 6.666);
+
+  @media (max-width: 749px) {
+    display: none;
+  }
 `;
 
 const Header = styled.div`
@@ -58,12 +128,21 @@ const Header = styled.div`
   /* 
   font-size: 1.0416vw;
   font-size: calc(var(--vw, 1vw) * 1.0416); */
+  @media (max-width: 750px) {
+    font-size: 5.563vw;
+    font-size: calc(var(--vw, 1vw) * 5.563);
+  }
 `;
 
 const SubHeader = styled.div`
   font-family: "Suisse";
   font-style: italic;
   padding-bottom: 8px;
+
+  @media (max-width: 750px) {
+    font-size: 5.0069vw;
+    font-size: calc(var(--vw, 1vw) * 5.0069);
+  }
 `;
 
 const Reference = styled.a`
@@ -72,12 +151,17 @@ const Reference = styled.a`
   text-decoration: underline;
   cursor: pointer;
   color: black;
+  padding-bottom: 8px;
+
+  @media (max-width: 750px) {
+    padding-bottom: 16px;
+    font-size: 5.0069vw;
+    font-size: calc(var(--vw, 1vw) * 5.0069);
+  }
 
   :hover {
     font-style: italic;
   }
-
-  padding-bottom: 8px;
 `;
 
 const List = styled(Reference)`
@@ -87,6 +171,11 @@ const List = styled(Reference)`
 
   padding-left: 1.666vw;
   padding-left: calc(var(--vw, 1vw) * 1.666);
+
+  @media (max-width: 750px) {
+    padding-left: 8vw;
+    padding-left: calc(var(--vw, 1vw) * 8);
+  }
 `;
 
 // const Nav = ({
@@ -101,49 +190,6 @@ const List = styled(Reference)`
 //   return (
 //     <>
 //       <NavSmall content={content} show={show} />
-//     </>
-//   );
-// };
-
-// const NavSmall = ({
-//   content,
-//   show,
-// }: {
-//   content: {
-//     section: string;
-//     title: string;
-//   }[];
-//   show: boolean;
-// }) => {
-//   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-//   return (
-//     <>
-//       {!isOpen && (
-//         <IconWrapper onClick={() => setIsOpen(true)} show={show}>
-//           <IconHamburger />
-//         </IconWrapper>
-//       )}
-//       <WrapperSmall open={isOpen}>
-//         <InnerWrapperSmall>
-//           <NavWrapperSmall>
-//             <Header>nav</Header>
-//             {content.map((item, i) => (
-//               <NavLink
-//                 href={`#${item.title}`}
-//                 key={`NavLink${i}`}
-//                 onClick={() => setIsOpen(false)}
-//               >
-//                 <SectionTag>{item.section}</SectionTag>
-//                 {item.title}
-//               </NavLink>
-//             ))}
-//           </NavWrapperSmall>
-//         </InnerWrapperSmall>
-//         <IconWrapper onClick={() => setIsOpen(false)} show={true}>
-//           <IconX />
-//         </IconWrapper>
-//       </WrapperSmall>
 //     </>
 //   );
 // };
@@ -168,64 +214,68 @@ const List = styled(Reference)`
 //   </Wrapper>
 // );
 
-// const WrapperSmall = styled.div<{ open: boolean }>`
-//   opacity: ${({ open }) => (open ? "1" : "0")};
-//   transition: all 0.2s ease-in;
-//   pointer-events: ${({ open }) => !open && "none"};
+const WrapperSmall = styled.div<{ open: boolean }>`
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  transition: all 0.2s ease-in;
+  pointer-events: ${({ open }) => !open && "none"};
 
-//   padding: 2vw;
-//   padding: calc(var(--vw, 1vw) * 2);
+  padding: 2vw;
+  padding: calc(var(--vw, 1vw) * 2);
 
-//   background-color: black;
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   left: 0;
+  background-color: #f0f0f0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 
-//   @media (min-width: 750px) {
-//     display: none;
-//   }
-// `;
+  @media (min-width: 750px) {
+    display: none;
+  }
+`;
 
-// const InnerWrapperSmall = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   border: 1px solid #00ff29;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// `;
+const InnerWrapperSmall = styled.div`
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  background-image: linear-gradient(90deg, #03ff54 6%, #f0f0f0 26%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-// const NavWrapperSmall = styled.div`
-//   display: flex;
-//   flex-direction: column;
-// `;
+const NavWrapperSmall = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 5rem;
+`;
 
-// const IconWrapper = styled.div<{ show: boolean }>`
-//   background-color: black;
-//   position: fixed;
-//   cursor: pointer;
+const IconWrapper = styled.div<{ show: boolean }>`
+  /* background-color: black; */
+  position: fixed;
+  cursor: pointer;
 
-//   visibility: ${(props) => (props.show ? "visible" : "hidden")};
-//   transition: all 200ms ${(props) => (props.show ? "ease-in" : "ease-out")};
-//   transform: ${(props) => (props.show ? "none" : "translate(100%, 0)")};
+  visibility: ${(props) => (props.show ? "visible" : "hidden")};
+  transition: all 200ms ${(props) => (props.show ? "ease-in" : "ease-out")};
+  transform: ${(props) => (props.show ? "none" : "translate(100%, 0)")};
 
-//   top: 6.1vw;
-//   top: calc(var(--vw, 1vw) * 6.1);
+  top: 6.1vw;
+  top: calc(var(--vw, 1vw) * 6.1);
 
-//   right: 6.1vw;
-//   right: calc(var(--vw, 1vw) * 6.1);
+  right: 6.1vw;
+  right: calc(var(--vw, 1vw) * 6.1);
 
-//   width: 9vw;
-//   width: calc(var(--vw, 1vw) * 9);
+  width: 9vw;
+  width: calc(var(--vw, 1vw) * 9);
 
-//   height: 9vw;
-//   height: calc(var(--vw, 1vw) * 9);
+  height: 9vw;
+  height: calc(var(--vw, 1vw) * 9);
 
-//   @media (min-width: 750px) {
-//     display: none;
-//   }
-// `;
+  @media (min-width: 750px) {
+    display: none;
+  }
+`;
 
 // const Wrapper = styled.div<{ top?: number | null; height?: number | null }>`
 //   display: flex;
@@ -291,28 +341,28 @@ const List = styled(Reference)`
 //   }
 // `;
 
-// const NavLink = styled.a`
-//   text-decoration: none;
-//   color: white;
-//   font-family: "Suisse";
+const NavLink = styled.a`
+  text-decoration: none;
+  color: white;
+  font-family: "Suisse";
 
-//   text-transform: uppercase;
-//   position: relative;
+  text-transform: uppercase;
+  position: relative;
 
-//   font-size: 1.458vw;
-//   font-size: calc(var(--vw, 1vw) * 1.458);
+  font-size: 1.458vw;
+  font-size: calc(var(--vw, 1vw) * 1.458);
 
-//   @media (max-width: 749px) {
-//     font-size: 7vw;
-//     font-size: calc(var(--vw, 1vw) * 7);
-//   }
+  @media (max-width: 749px) {
+    font-size: 7vw;
+    font-size: calc(var(--vw, 1vw) * 7);
+  }
 
-//   @media (min-width: 750px) and (max-width: 1249px) {
-//     font-size: 1.9vw;
-//     font-size: calc(var(--vw, 1vw) * 1.9);
-//   }
-//   :hover {
-//     color: #00ff29;
-//     text-decoration: underline;
-//   }
-// `;
+  @media (min-width: 750px) and (max-width: 1249px) {
+    font-size: 1.9vw;
+    font-size: calc(var(--vw, 1vw) * 1.9);
+  }
+  :hover {
+    color: #00ff29;
+    text-decoration: underline;
+  }
+`;

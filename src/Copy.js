@@ -2,7 +2,7 @@ export const turboSculpture = {
   header: {
     top: ["Turbo-sculpture ", "&"],
     mid: "anti-monumentalism",
-    bottom: "The case of Banatski Sokolac's Bob Marley monument",
+    bottom: <>The case of Banatski Sokolac's Bob Marley monument</>,
   },
   nav: [
     { variant: "header", copy: "contents" },
