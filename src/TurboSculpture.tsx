@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Header } from "./Components/Header";
 import { SectionWithHeader } from "./Components/SectionWithHeader";
 import { NavLarge, NavSmall } from "./Components/Nav";
@@ -8,6 +8,8 @@ import { useScrollPosition } from "./UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
 import { turboSculpture } from "./Copy";
 import marleyMaps from "./Images/marleyMaps.png";
+import { css, Global } from "@emotion/react";
+import { GlobalStyles } from "./GlobalStyles";
 //TODO debounce window listeners?
 
 // if on small view and nav open -> resize over 750 px -> setOpen(false)
@@ -32,6 +34,8 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
   return useMemo(
     () => (
       <OuterWrapper onClick={() => setHideOnScroll(true)}>
+        <GlobalStyles />
+        <Global styles={turboSculptureGlobalStyles} />
         <Header text={turboSculpture.header} />
         <NavSmall content={turboSculpture.nav} show={hideOnScroll} />
         <ImgWrapper>
@@ -119,4 +123,31 @@ const ImgWrapper = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+`;
+
+const turboSculptureGlobalStyles = css`
+  em,
+  i {
+    font-family: "SuisseWorks";
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  strong {
+    font-family: "Suisse";
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .endNote {
+    color: #03ff54;
+    cursor: help;
+  }
+
+  *::selection {
+    background-color: #03ff54;
+  }
+  .endNote::selection {
+    background: black;
+  }
 `;

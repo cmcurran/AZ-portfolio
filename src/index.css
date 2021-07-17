@@ -1,10 +1,4 @@
 @font-face {
-  font-family: "MG Mono";
-  src: local("MG Mono"),
-    url(./fonts/MonumentGrotesk-Mono.otf) format("truetype");
-}
-
-@font-face {
   font-family: "Suisse";
   src: local("Suisse"), url(./fonts/SuisseIntl-Regular.otf) format("truetype");
   font-weight: 400;
@@ -47,59 +41,30 @@
   font-stretch: normal;
 }
 
-/* THAT GREEN #03ff54*/
-html {
-  scroll-behavior: smooth;
-}
-
-em,
-i {
-  font-family: "SuisseWorks";
-  font-style: italic;
+@font-face {
+  font-family: "MG";
+  src: local("MG"), url(./fonts/MonumentGrotesk-Regular.otf) format("truetype");
   font-weight: 400;
-}
-
-strong {
-  font-family: "Suisse";
   font-style: normal;
-  font-weight: 600;
+  font-stretch: normal;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
+@font-face {
+  font-family: "MG";
+  src: local("MG"), url(./fonts/MonumentGrotesk-Italic.otf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
 }
 
-body {
-  /* background-color: black; */
-  overflow-wrap: break-word;
-  color: black;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-div {
-  overflow-wrap: break-word;
+@font-face {
+  font-family: "MG Mono";
+  src: local("MG Mono"),
+    url(./fonts/MonumentGrotesk-Mono.otf) format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-/* ::selection,
-::-moz-selection {
-  background-color: #03ff54 !important;
-}
-.endNote::selection {
-  background: black;
-} */
-
-.endNote {
-  color: #03ff54;
-  cursor: help;
+@font-face {
+  font-family: "MG Semi-Mono";
+  src: local("MG Semi-Mono"),
+    url(./fonts/MonumentGrotesk-Semi-Mono.otf) format("truetype");
 }

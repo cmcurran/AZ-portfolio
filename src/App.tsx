@@ -1,13 +1,23 @@
-import { Router } from "@reach/router";
-import { TurboSculpture } from "./TurboSculpture";
+import { css } from "@emotion/react";
+import { RouteComponentProps } from "@reach/router";
 
-import { Home } from "./Home";
-
-const App = () => (
-  <Router>
-    <Home path="/" />
-    <TurboSculpture path="turbosculpture" />
-  </Router>
+export const App: React.FC<RouteComponentProps> = ({ children }) => (
+  <div>
+    <div
+      css={css`
+        font-size: 100px;
+        border-bottom: 5px solid black;
+      `}
+    >
+      alexandra papademetriou
+    </div>
+    {children}
+  </div>
 );
 
-export default App;
+const styles = {
+  navbar: css`
+    font-size: 100px;
+    border-bottom: 5px solid black;
+  `,
+};
