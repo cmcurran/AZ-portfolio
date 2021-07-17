@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import ThemeProvider from "./ThemeProvider";
 import "./index.css";
 
 import "./fonts/MonumentGrotesk-Regular.otf";
@@ -26,14 +26,30 @@ import { TurboSculpture } from "./TurboSculpture";
 //   document.getElementById("root")
 // );
 
+// Use a custom wrapper to prevent passing through DOM props
+// to a non-DOM element.
+const RouterComponent: React.FC = ({ children }) => <>{children}</>;
+
+function Routes() {
+  // Set primary={false} to prevent errors due to the router
+  // attempting to force focus on a non-DOM element.
+  return (
+    <Router primary={false} component={RouterComponent}>
+      <Home path="/" />
+    </Router>
+  );
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App path="/">
-        <Home path="/" />
-      </App>
-      <TurboSculpture path="turbosculpture" />
-    </Router>
+    <ThemeProvider>
+      <Router primary={false} component={RouterComponent}>
+        <App path="/">
+          <Home path="/" />
+        </App>
+        <TurboSculpture path="turbosculpture" />
+      </Router>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

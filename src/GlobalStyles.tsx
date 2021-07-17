@@ -7,6 +7,12 @@ export const GlobalStyles: React.FC = () => (
         scroll-behavior: smooth;
       }
 
+      #root,
+      html,
+      body {
+        height: 100%;
+      }
+
       em,
       i {
         font-family: "MG";

@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import styled from "@emotion/styled";
-import { Header } from "./Components/Header";
-import { SectionWithHeader } from "./Components/SectionWithHeader";
-import { NavLarge, NavSmall } from "./Components/Nav";
+import { Header } from "./Components/TurboSculpture/Header";
+import { SectionWithHeader } from "./Components/TurboSculpture/SectionWithHeader";
+import { NavLarge, NavSmall } from "./Components/TurboSculpture/Nav";
 
 import { useScrollPosition } from "./UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { turboSculptureEndnotes } from "../Copy";
-import birdseye from "../Images/birdseye.jpg";
-import musiciansWithMarley from "../Images/musiciansWithMarley.jpg";
+import { turboSculptureEndnotes } from "../../Copy";
+import birdseye from "../../Images/birdseye.jpg";
+import musiciansWithMarley from "../../Images/musiciansWithMarley.jpg";
 
 const findIndexes = (str: string, searchFor: string) => {
   const indices = [];
