@@ -46,6 +46,10 @@ export const GlobalStyles: React.FC = () => (
       div {
         overflow-wrap: break-word;
       }
+      a {
+        text-decoration: none;
+        color: black;
+      }
     `}
   />
 );

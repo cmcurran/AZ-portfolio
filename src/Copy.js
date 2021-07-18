@@ -1,4 +1,24 @@
 import React from "react";
+
+export const About = {
+  bioText: [
+    "Artist and researcher.",
+    "Born 1994 in Athens, Greece.",
+    "Currently based in Gothenburg, Sweden",
+  ],
+  button: { copy: "Download CV", url: "CV.pdf" },
+  links: [
+    {
+      copy: "papademetriou.alexandra@gmail.com",
+      url: "mailto:papademetriou.alexandra@gmail.com",
+    },
+    {
+      copy: "@alexandra.apapa",
+      url: "https://www.instagram.com/alexandra.apapa/",
+    },
+  ],
+};
+
 export const turboSculpture = {
   header: {
     top: ["Turbo-sculpture ", "&"],
@@ -755,6 +775,7 @@ export const turboSculpture = {
             <a
               href="https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html"
               target="_blank"
+              rel="noopener noreferrer"
             >
               https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html
             </a>
@@ -765,6 +786,7 @@ export const turboSculpture = {
             <i>Balkan Insight</i>, 25 June 2013,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/"
             >
               https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/
@@ -783,6 +805,7 @@ export const turboSculpture = {
             4. ‘Banatski Sokolac’, <i>Opština Plandište</i>, [website]{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat"
             >
               http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat
@@ -793,6 +816,7 @@ export const turboSculpture = {
             5. ‘Rock Village 2008’, <i>last.fm</i> [website]
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.last.fm/festival/675960+Rock+Village+2008"
             >
               https://www.last.fm/festival/675960+Rock+Village+2008
@@ -804,7 +828,11 @@ export const turboSculpture = {
           </>,
           <>
             7. ‘O Festivalu’, <i>Rock Village</i>, [website]{" "}
-            <a target="_blank" href="http://rockvillage.org/about/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://rockvillage.org/about/"
+            >
               http://rockvillage.org/about/
             </a>{" "}
             (accessed 12 November 2019).
@@ -814,6 +842,7 @@ export const turboSculpture = {
             <i>The Guardian</i>, 25 August 2008,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia"
             >
               https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia
@@ -825,6 +854,7 @@ export const turboSculpture = {
             2005,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://news.bbc.co.uk/2/hi/entertainment/4474316.stm"
             >
               http://news.bbc.co.uk/2/hi/entertainment/4474316.stm
@@ -850,6 +880,7 @@ export const turboSculpture = {
             Pigeons’, <i>The New York Times</i>, 11 November 2007,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.nytimes.com/2007/11/11/world/europe/11balkans.html"
             >
               https://www.nytimes.com/2007/11/11/world/europe/11balkans.html
@@ -922,6 +953,7 @@ export const turboSculpture = {
             <i>Spomenik Database</i>, [website]{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.spomenikdatabase.org/present-day-conditions"
             >
               https://www.spomenikdatabase.org/present-day-conditions
@@ -993,6 +1025,7 @@ export const turboSculpture = {
             Ljubljana, 26 August 2019,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431"
             >
               http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431
@@ -1030,6 +1063,7 @@ export const turboSculpture = {
             essay. The first instalment can be found here:{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://balkanist.net/queer-as-turbofolk-part-i-eastern-europe-is-homophobic/"
             >
               https://balkanist.net/queer-as-turbofolk-part-i-eastern-europe-is-homophobic/
@@ -1069,7 +1103,11 @@ export const turboSculpture = {
           <>
             51. A. Domanović, <i>Turbo Sculpture, 2010 - 2013</i>, [online
             video], 2014,{" "}
-            <a target="_blank" href="https://vimeo.com/95907707">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://vimeo.com/95907707"
+            >
               https://vimeo.com/95907707
             </a>
             , (accessed 28 November 2019).
@@ -1079,6 +1117,7 @@ export const turboSculpture = {
             2009,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/"
             >
               http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/
@@ -1097,8 +1136,11 @@ export const turboSculpture = {
             ‘Banatski Sokolac’, <i>Opština Plandište</i>, [website]{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat"
-            ></a>
+            >
+              http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat
+            </a>
             , (accessed 18 December 2019).
           </>,
           <>
@@ -1106,6 +1148,7 @@ export const turboSculpture = {
             2005,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://news.bbc.co.uk/2/hi/entertainment/4474316.stm"
             >
               http://news.bbc.co.uk/2/hi/entertainment/4474316.stm
@@ -1114,7 +1157,11 @@ export const turboSculpture = {
           </>,
           <>
             ‘O Festivalu’, <i>Rock Village</i>, [website]{" "}
-            <a target="_blank" href="http://rockvillage.org/about/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="http://rockvillage.org/about/"
+            >
               http://rockvillage.org/about/
             </a>{" "}
             (accessed 12 November 2019).
@@ -1123,6 +1170,7 @@ export const turboSculpture = {
             ‘Rock Village 2008’, <i>last.fm</i> [website]{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.last.fm/festival/675960+Rock+Village+2008"
             >
               https://www.last.fm/festival/675960+Rock+Village+2008
@@ -1173,6 +1221,7 @@ export const turboSculpture = {
             <i>The New York Times</i>, 11 November 2007,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.nytimes.com/2007/11/11/world/europe/11balkans.html"
             >
               https://www.nytimes.com/2007/11/11/world/europe/11balkans.html
@@ -1189,6 +1238,7 @@ export const turboSculpture = {
             , 25 August 2008,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html"
             >
               https://www.nytimes.com/2008/08/26/arts/26arts-BOBMARLEYSTA_BRF.html
@@ -1205,6 +1255,7 @@ export const turboSculpture = {
             <i>Balkan Insight</i>, 25 June 2013,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/"
             >
               https://balkaninsight.com/2013/06/25/balkan-monuments-the-weird-and-wonderful/
@@ -1250,6 +1301,7 @@ export const turboSculpture = {
             2019,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431"
             >
               http://mrezni-muzej.mg-lj.si/en/networkmuseum/3/23/?artworkid=1431
@@ -1272,7 +1324,11 @@ export const turboSculpture = {
           <>
             Domanović, A., <i>Turbo Sculpture, 2010 - 2013</i>, [online video],
             2014,{" "}
-            <a target="_blank" href="https://vimeo.com/95907707">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://vimeo.com/95907707"
+            >
               https://vimeo.com/95907707
             </a>
             , (Accessed 28 November 2019).
@@ -1354,6 +1410,7 @@ export const turboSculpture = {
             <i>The Guardian</i>, 25 August 2008,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia"
             >
               https://www.theguardian.com/music/2008/aug/25/bob.marley.statue.serbia
@@ -1369,6 +1426,7 @@ export const turboSculpture = {
             <i>Spomenik Database</i>, [website]{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.spomenikdatabase.org/present-day-conditions"
             >
               https://www.spomenikdatabase.org/present-day-conditions
@@ -1445,6 +1503,7 @@ export const turboSculpture = {
             2009,{" "}
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/"
             >
               http://artfcity.com/2009/08/24/img-mgmt-turbo-sculpture/
@@ -1478,7 +1537,7 @@ export const turboSculpture = {
 
           <>
             <a
-              rel="license"
+              rel="license noopener noreferrer"
               href="http://creativecommons.org/licenses/by/4.0/"
               target="_blank"
             >
@@ -1491,7 +1550,7 @@ export const turboSculpture = {
             <br />
             This work is licensed under a{" "}
             <a
-              rel="license"
+              rel="license noopener noreferrer"
               href="http://creativecommons.org/licenses/by/4.0/"
               target="_blank"
             >

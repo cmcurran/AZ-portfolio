@@ -16,29 +16,14 @@ import "./fonts/SuisseWorks-BookItalic.otf";
 
 import { App } from "./App";
 import { Router } from "@reach/router";
-import { Home } from "./Home";
-import { TurboSculpture } from "./TurboSculpture";
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
+import { Home } from "./Views/Home";
+import { TurboSculpture } from "./Views/TurboSculpture";
+import { About } from "./Views/About";
+import { Work } from "./Views/Work";
 
 // Use a custom wrapper to prevent passing through DOM props
 // to a non-DOM element.
 const RouterComponent: React.FC = ({ children }) => <>{children}</>;
-
-function Routes() {
-  // Set primary={false} to prevent errors due to the router
-  // attempting to force focus on a non-DOM element.
-  return (
-    <Router primary={false} component={RouterComponent}>
-      <Home path="/" />
-    </Router>
-  );
-}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -46,6 +31,8 @@ ReactDOM.render(
       <Router primary={false} component={RouterComponent}>
         <App path="/">
           <Home path="/" />
+          <About path="/about" />
+          <Work path="/work" />
         </App>
         <TurboSculpture path="turbosculpture" />
       </Router>

@@ -1,17 +1,21 @@
 import { css, Theme } from "@emotion/react";
-import { RouteComponentProps } from "@reach/router";
+import { Link, RouteComponentProps } from "@reach/router";
 
 export const App: React.FC<RouteComponentProps> = ({ children }) => (
   <div
     css={css`
-      height: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
       /* react-reach nested routes render a div, I'm making it take up all available vertical space */
       > div {
         height: 100%;
       }
     `}
   >
-    <div css={styles.navbar}>alexandra papademetriou</div>
+    <Link to="/" css={styles.navbar}>
+      alexandra papademetriou
+    </Link>
     {children}
   </div>
 );

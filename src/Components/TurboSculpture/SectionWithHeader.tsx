@@ -1,8 +1,8 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { turboSculptureEndnotes } from "../../Copy";
 import birdseye from "../../Images/birdseye.jpg";
 import musiciansWithMarley from "../../Images/musiciansWithMarley.jpg";
-
 const findIndexes = (str: string, searchFor: string) => {
   const indices = [];
   for (var i = 0; i < str.length; i++) {
@@ -120,6 +120,7 @@ export const SectionWithHeader = ({
                 Images of Banatski Sokolac and the Bob Marley monument from the{" "}
                 <a
                   target="_blank"
+                  rel="noopener noreferrer"
                   href="http://plandiste-opstina.rs/o-plandistu/naselja/banatski-sokolac/?script=lat"
                 >
                   Opština Plandište website

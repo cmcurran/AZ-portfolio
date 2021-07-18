@@ -1,15 +1,15 @@
 import React, { useState, useMemo } from "react";
 import styled from "@emotion/styled";
-import { Header } from "./Components/TurboSculpture/Header";
-import { SectionWithHeader } from "./Components/TurboSculpture/SectionWithHeader";
-import { NavLarge, NavSmall } from "./Components/TurboSculpture/Nav";
+import { Header } from "../Components/TurboSculpture/Header";
+import { SectionWithHeader } from "../Components/TurboSculpture/SectionWithHeader";
+import { NavLarge, NavSmall } from "../Components/TurboSculpture/Nav";
 
-import { useScrollPosition } from "./UseScrollPosition.js";
+import { useScrollPosition } from "../UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
-import { turboSculpture } from "./Copy";
-import marleyMaps from "./Images/marleyMaps.png";
+import { turboSculpture } from "../Copy";
+import marleyMaps from "../Images/marleyMaps.png";
 import { css, Global } from "@emotion/react";
-import { GlobalStyles } from "./GlobalStyles";
+import { GlobalStyles } from "../GlobalStyles";
 //TODO debounce window listeners?
 
 // if on small view and nav open -> resize over 750 px -> setOpen(false)
