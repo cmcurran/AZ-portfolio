@@ -87,6 +87,8 @@ const styles = {
   `,
   link: (theme: Theme) => css`
     padding-bottom: 0.5rem;
+    transition: ${theme.transition.color};
+
     :hover {
       color: ${theme.colors.yellow};
     }

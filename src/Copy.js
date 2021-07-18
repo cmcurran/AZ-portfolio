@@ -4,7 +4,7 @@ export const About = {
   bioText: [
     "Artist and researcher.",
     "Born 1994 in Athens, Greece.",
-    "Currently based in Gothenburg, Sweden",
+    "Currently based in Gothenburg, Sweden.",
   ],
   button: { copy: "Download CV", url: "CV.pdf" },
   links: [

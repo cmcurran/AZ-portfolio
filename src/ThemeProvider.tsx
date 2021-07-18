@@ -16,6 +16,7 @@ const theme: Theme = {
   border: border,
   transition: {
     background: "background-color 0.3s ease-out",
+    color: "color 0.3s ease-out",
   },
   media: {
     minWidth760: "(min-width: 760px)",
