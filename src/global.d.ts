@@ -19,6 +19,8 @@ declare module "@emotion/react" {
       maxWidth759: string;
       minWidth1000: string;
       maxWidth999: string;
+      minWidth1700: string;
+      maxWidth1699: string;
       flexColumnRow: string;
       borderColumnRowLeft: string;
       borderColumnRowRight: string;

@@ -23,6 +23,8 @@ const theme: Theme = {
     maxWidth759: "(max-width: 759px)",
     minWidth1000: "(min-width: 1000px)",
     maxWidth999: "(max-width: 999px)",
+    minWidth1700: "(min-width:1700px)",
+    maxWidth1699: "(max-width:1699)",
     flexColumnRow: `
     display:flex;
     flex-direction: column;

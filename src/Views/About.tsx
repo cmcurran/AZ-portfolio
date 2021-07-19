@@ -1,20 +1,12 @@
 import { css, Theme } from "@emotion/react";
 import { RouteComponentProps } from "@reach/router";
-import { GlobalStyles } from "../GlobalStyles";
 import { About as copy } from "../Copy";
 
 export const About = (_props: RouteComponentProps) => (
   <div css={styles.wrapper}>
-    <GlobalStyles />
-
     <div css={styles.innerWrapper}>
       {copy.bioText.map((copy) => (
-        <div
-          key={copy}
-          css={css`
-            padding-bottom: 0.5rem;
-          `}
-        >
+        <div key={copy} css={styles.copy}>
           {copy}
         </div>
       ))}
@@ -102,5 +94,8 @@ const styles = {
       padding: 4.21052vw;
       padding: calc(var(--vw, 1vw) * 4.21052);
     }
+  `,
+  copy: css`
+    padding-bottom: 0.5rem;
   `,
 };

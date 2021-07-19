@@ -19,6 +19,55 @@ export const About = {
   ],
 };
 
+export const Work = {
+  sections: [
+    {
+      header: "artistic research",
+      works: [
+        {
+          title: "The Degrowth Toolbox for Artistic Practices",
+          date: "ongoing",
+        },
+        {
+          title:
+            "The Plan for the Cultural Consolidation of the Balkan Peninsula",
+          date: "2019-2021",
+        },
+      ],
+    },
+    {
+      header: "painting series",
+      works: [
+        {
+          title: "Handbook to the Lore and Wisdom of the Queer Indigenous",
+          date: "2017",
+        },
+        {
+          title: "Nothing Left",
+          date: "2016",
+        },
+        {
+          title: "This Work Is Not Seminal",
+          date: "2015",
+        },
+        {
+          title: "PULP",
+          date: "2014",
+        },
+      ],
+    },
+    {
+      header: "curation",
+      works: [
+        {
+          title: "Bodies in Alliance / Bodies in Defiance",
+          date: "2019",
+        },
+      ],
+    },
+  ],
+};
+
 export const turboSculpture = {
   header: {
     top: ["Turbo-sculpture ", "&"],

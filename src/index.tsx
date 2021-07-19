@@ -20,6 +20,7 @@ import { Home } from "./Views/Home";
 import { TurboSculpture } from "./Views/TurboSculpture";
 import { About } from "./Views/About";
 import { Work } from "./Views/Work";
+import { Work as workCopy } from "./Copy";
 
 // Use a custom wrapper to prevent passing through DOM props
 // to a non-DOM element.
@@ -32,7 +33,7 @@ ReactDOM.render(
         <App path="/">
           <Home path="/" />
           <About path="/about" />
-          <Work path="/work" />
+          <Work path="/work" content={workCopy} />
         </App>
         <TurboSculpture path="turbosculpture" />
       </Router>

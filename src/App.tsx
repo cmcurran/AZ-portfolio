@@ -1,5 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { Link, RouteComponentProps } from "@reach/router";
+import { GlobalStyles } from "./GlobalStyles";
 
 export const App: React.FC<RouteComponentProps> = ({ children, location }) => {
   let variant: string | undefined;
@@ -14,6 +15,7 @@ export const App: React.FC<RouteComponentProps> = ({ children, location }) => {
 
   return (
     <div css={styles.wrapper}>
+      <GlobalStyles />
       <Link to="/" css={[styles.navbar, variant && styles[variant]]}>
         alexandra papademetriou
       </Link>
