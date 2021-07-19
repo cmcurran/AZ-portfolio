@@ -34,6 +34,7 @@ export const About = (_props: RouteComponentProps) => (
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
+          key={link.copy}
         >
           {link.copy}
         </a>
