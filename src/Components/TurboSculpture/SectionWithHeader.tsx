@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { turboSculptureEndnotes } from "../../Copy";
-import birdseye from "../../Images/birdseye.jpg";
-import musiciansWithMarley from "../../Images/musiciansWithMarley.jpg";
 const findIndexes = (str: string, searchFor: string) => {
   const indices = [];
   for (var i = 0; i < str.length; i++) {
@@ -109,11 +107,11 @@ export const SectionWithHeader = ({
           return (
             <ImageWrapper>
               <Image
-                src={birdseye}
+                src={"../../Images/birdseye.jpg"}
                 alt="An aerial photograph of the village of Banatski Sokolac, surrounded by fields."
               />
               <Image
-                src={musiciansWithMarley}
+                src={"../../Images/musiciansWithMarley.jpg"}
                 alt="A group of 7 musicians posing around  the Bob Marley monument."
               />
               <Caption>

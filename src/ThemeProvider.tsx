@@ -32,6 +32,7 @@ const theme: Theme = {
       flex-direction: row;
     }`,
     borderColumnRowLeft: `
+    flex: 0 1 50%;
     @media (max-width: 999px){
         ${border.bottom}
     }
@@ -40,6 +41,7 @@ const theme: Theme = {
     }
     `,
     borderColumnRowRight: `
+    flex: 0 1 50%;
     @media (max-width: 999px){
         ${border.top}
     }

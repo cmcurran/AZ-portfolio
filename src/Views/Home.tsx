@@ -2,11 +2,9 @@ import { css, Theme } from "@emotion/react";
 
 import { Link, RouteComponentProps } from "@reach/router";
 import { AppViewWrapper } from "../Components/AppViewWrapper";
-import { GlobalStyles } from "../GlobalStyles";
 
 export const Home = (_props: RouteComponentProps) => (
   <div css={styles.wrapper}>
-    <GlobalStyles />
     <AppViewWrapper>
       <Link css={[styles.links, styles.left]} to="work">
         <span css={styles.linkText}>work</span>
@@ -23,7 +21,6 @@ const styles = {
     ${theme.styles.wrapper}
   `,
   links: (theme: Theme) => css`
-    flex: 0 1 50%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,13 +1,24 @@
 import React from "react";
 import { css, Theme } from "@emotion/react";
-import { RouteComponentProps } from "@reach/router";
+import { Link, RouteComponentProps } from "@reach/router";
 
 export const Work: React.FC<
   RouteComponentProps & {
     content: {
       sections: {
         header: string;
-        works: { title: string; date: string }[];
+        variant: string; //"gallery" | ""
+        works: {
+          title: string;
+          date: string;
+          path?: string;
+          work?: {
+            title: string;
+            date: string;
+            about: React.ReactNode;
+            gallery: { img: string; size: string; material: string }[];
+          };
+        }[];
       }[];
     };
   }
@@ -18,12 +29,23 @@ export const Work: React.FC<
         <div css={styles.sectionHeader} key={section.header}>
           {section.header}
         </div>
-        {section.works.map((work) => (
-          <div css={styles.itemRow} key={work.title}>
-            <span css={styles.item}>{work.title}</span>
-            <span css={styles.date}>{work.date}</span>
-          </div>
-        ))}
+        {section.works.map((work) =>
+          work.path ? (
+            <Link
+              to={`/work/${work.path}`}
+              css={styles.itemRow}
+              key={work.title}
+            >
+              <span css={styles.item}>{work.title}</span>
+              <span css={styles.date}>{work.date}</span>
+            </Link>
+          ) : (
+            <div css={styles.itemRow} key={work.title}>
+              <span css={styles.item}>{work.title}</span>
+              <span css={styles.date}>{work.date}</span>
+            </div>
+          )
+        )}
       </>
     ))}
   </div>

@@ -1,8 +1,15 @@
 import { css, Theme } from "@emotion/react";
 import { Link, RouteComponentProps } from "@reach/router";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { GlobalStyles } from "./GlobalStyles";
 
-export const App: React.FC<RouteComponentProps> = ({ children, location }) => {
+export const App: React.FC<
+  RouteComponentProps & {
+    setNavHeight: Dispatch<SetStateAction<number | undefined>>;
+  }
+> = ({ children, location, setNavHeight }) => {
   let variant: string | undefined;
   switch (location?.pathname) {
     case "/about":
@@ -13,10 +20,22 @@ export const App: React.FC<RouteComponentProps> = ({ children, location }) => {
       break;
   }
 
+  const navRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    if (navRef && navRef.current) {
+      setNavHeight(navRef?.current?.offsetHeight);
+    }
+  }, [setNavHeight]);
+
   return (
     <div css={styles.wrapper}>
       <GlobalStyles />
-      <Link to="/" css={[styles.navbar, variant && styles[variant]]}>
+      <Link
+        to="/"
+        css={[styles.navbar, variant && styles[variant]]}
+        ref={navRef}
+      >
         alexandra papademetriou
       </Link>
       {children}
