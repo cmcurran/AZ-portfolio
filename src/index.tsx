@@ -36,7 +36,7 @@ const Apapa = () => {
     <React.StrictMode>
       <ThemeProvider>
         <Router primary={false} component={RouterComponent}>
-          <App path="/" setNavHeight={setNavHeight}>
+          <App path="/" setNavHeight={setNavHeight} navHeight={navHeight}>
             <Home path="/" />
             <About path="/about" />
             <Work path="/work" content={workCopy} />

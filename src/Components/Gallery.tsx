@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 import { useEffect } from "react";
 import Lightbox from "react-image-lightbox";
+import debounce from "lodash.debounce";
 
 export const Gallery: React.FC<
   RouteComponentProps & {
@@ -32,12 +33,26 @@ export const Gallery: React.FC<
     if (!window) {
       return;
     }
-    setHeight(window.innerHeight);
-  }, [setHeight]);
+
+    if (!height) {
+      setHeight(window.innerHeight);
+    }
+
+    const resizeListener = () => {
+      setHeight(window.innerHeight);
+    };
+
+    const debounced = debounce(resizeListener, 100);
+    window.addEventListener("resize", debounced);
+
+    return () => {
+      debounced.cancel();
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, [height, setHeight]);
 
   const imageArray = content.gallery.map((item) => `/Images/${item.img}`);
 
-  height && navHeight && console.log(height, navHeight, height - navHeight);
   return navHeight && height ? (
     <AppViewWrapper>
       <div css={[styles.left, styles.section]}>
@@ -65,20 +80,7 @@ export const Gallery: React.FC<
             setPhotoIndex((photoIndex + 1) % imageArray.length)
           }
           imageCaption={
-            <div
-              css={css`
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                flex-wrap: wrap;
-                text-align: center;
-                font-family: "MG Semi-Mono";
-                font-size: 16px;
-                > div {
-                  margin-right: 1rem;
-                }
-              `}
-            >
+            <div css={styles.lightboxCaptionWrapper}>
               <div>{content.gallery[photoIndex].size}</div>
               <div>{content.gallery[photoIndex].material}</div>
               <div>{content.gallery[photoIndex].date}</div>
@@ -89,58 +91,20 @@ export const Gallery: React.FC<
       <ScrollDiv
         navHeight={navHeight}
         height={height}
-        css={[
-          styles.right,
-          styles.section,
-          css`
-            align-items: center;
-            padding: 4rem 16rem;
-          `,
-        ]}
+        css={[styles.right, styles.section, css``]}
       >
         {content.gallery.map((item, i) => (
-          <div
-            css={css`
-              display: flex;
-              flex-direction: column;
-              &:not(:last-child) {
-                margin-bottom: 8rem;
-              }
-            `}
-          >
+          <div css={styles.galleryWrapper}>
             <img
               alt={item.img}
               src={`/Images/${item.img}`}
-              css={css`
-                width: 100%;
-                cursor: pointer;
-                -webkit-transition: all 0.3s ease-in-out;
-                -moz-transition: all 0.3s ease-in-out;
-                -o-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
-                display: inline-block;
-
-                :hover {
-                  transform: scale(1.05);
-                  transition: transform 0.2s ease-out;
-                }
-              `}
+              css={styles.image}
               onClick={() => {
                 setPhotoIndex(i);
                 setOpen(true);
               }}
             />
-            <div
-              css={css`
-                display: flex;
-                flex-direction: column;
-                width: 50%;
-                min-width: 400px;
-                font-family: "MG Semi-Mono";
-                align-self: flex-end;
-                font-size: 12px;
-              `}
-            >
+            <div css={styles.galleryCaptionWrapper}>
               <div>{item.size}</div>
               <div>{item.material}</div>
               <div>{item.date}</div>
@@ -155,8 +119,15 @@ export const Gallery: React.FC<
 const styles = {
   left: (theme: Theme) => css`
     ${theme.media.borderColumnRowLeft}
-    font-size: 40px;
-    padding: 3rem 10rem 2rem 3rem;
+    font-size:20px;
+    padding: 3rem 2rem;
+
+    @media ${theme.media.minWidth1000} {
+      font-size: 2.08333vw;
+      font-size: calc(var(--vw, 1vw) * 2.08333);
+      padding: 3rem 8.33vw 2rem 2.5vw;
+      padding: 3rem calc(var(--vw, 1vw) * 8.33) 2rem calc(var(--vw, 1vw) * 2.5);
+    }
   `,
   right: (theme: Theme) => css`
     ${theme.media.borderColumnRowRight}
@@ -166,11 +137,72 @@ const styles = {
     display: flex;
     flex-direction: column;
   `,
-  about: css`
-    font-size: 20px;
+  about: (theme: Theme) => css`
+    font-size: 16px;
+
+    @media ${theme.media.minWidth1000} {
+      font-size: 20px;
+    }
   `,
-  title: css`
-    padding-bottom: 2rem;
+  title: (theme: Theme) => css`
+    padding-bottom: 1rem;
+
+    @media ${theme.media.minWidth1000} {
+      padding-bottom: 2rem;
+    }
+  `,
+  galleryWrapper: (theme: Theme) => css`
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    @media ${theme.media.minWidth1000} {
+      &:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+    }
+  `,
+  lightboxCaptionWrapper: css`
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: "MG Semi-Mono";
+    font-size: 16px;
+    > div {
+      margin-right: 1rem;
+    }
+  `,
+  galleryCaptionWrapper: (theme: Theme) => css`
+    display: flex;
+    flex-direction: column;
+    font-family: "MG Semi-Mono";
+    font-size: 12px;
+
+    @media ${theme.media.minWidth1000} {
+      min-width: 400px;
+      > div {
+        width: 50%;
+        align-self: flex-end;
+      }
+    }
+  `,
+  image: css`
+    width: 100%;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+
+    :hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-out;
+    }
   `,
 };
 
@@ -180,7 +212,11 @@ const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
     max-height: ${height - navHeight - 1}px !important;
     overflow-x: hidden;
     overflow-y: scroll;
+    padding: 4rem 16rem;
   }`}
+
+  align-items: center;
+  padding: 3rem 2rem;
 
   &::-webkit-scrollbar {
     background-color: white;

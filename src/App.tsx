@@ -4,12 +4,14 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { Dispatch, SetStateAction } from "react";
 import { GlobalStyles } from "./GlobalStyles";
+import debounce from "lodash.debounce";
 
 export const App: React.FC<
   RouteComponentProps & {
     setNavHeight: Dispatch<SetStateAction<number | undefined>>;
+    navHeight: number | undefined;
   }
-> = ({ children, location, setNavHeight }) => {
+> = ({ children, location, setNavHeight, navHeight }) => {
   let variant: string | undefined;
   switch (location?.pathname) {
     case "/about":
@@ -23,10 +25,26 @@ export const App: React.FC<
   const navRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    if (navRef && navRef.current) {
-      setNavHeight(navRef?.current?.offsetHeight);
+    if (!window || !navRef || !navRef.current) {
+      return;
     }
-  }, [setNavHeight]);
+
+    if (!navHeight) {
+      setNavHeight(navRef.current.offsetHeight);
+    }
+
+    const resizeListener = () => {
+      setNavHeight(navRef?.current?.offsetHeight);
+    };
+
+    const debounced = debounce(resizeListener, 100);
+    window.addEventListener("resize", debounced);
+
+    return () => {
+      debounced.cancel();
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, [navHeight, setNavHeight]);
 
   return (
     <div css={styles.wrapper}>
