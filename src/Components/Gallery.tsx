@@ -41,11 +41,46 @@ export const Gallery: React.FC<
       <ScrollDiv
         navHeight={navHeight}
         height={height}
-        css={[styles.right, styles.section]}
+        css={[
+          styles.right,
+          styles.section,
+          css`
+            align-items: center;
+            padding: 4rem 16rem;
+          `,
+        ]}
       >
-        <div css={styles.about}>{content.about}</div>{" "}
-        <div css={styles.about}>{content.about}</div>
-        <div css={styles.about}>{content.about}</div>
+        {content.gallery.map((item) => (
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              &:not(:last-child) {
+                margin-bottom: 8rem;
+              }
+            `}
+          >
+            <img
+              src={`/Images/${item.img}`}
+              css={css`
+                width: 100%;
+              `}
+            />
+            <div
+              css={css`
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                font-family: "MG Semi-Mono";
+                align-self: flex-end;
+                font-size: 12px;
+              `}
+            >
+              <div>{item.size}</div> <div>{item.material}</div>
+              <div>{item.date}</div>
+            </div>
+          </div>
+        ))}
       </ScrollDiv>
     </AppViewWrapper>
   ) : null;
@@ -87,16 +122,16 @@ const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
     background-color: white;
     border: solid 3px black;
   }
-  ::-webkit-scrollbar-button:vertical:end:increment {
+  &::-webkit-scrollbar-button:vertical:end:increment {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 304 304' style='enable-background:new 0 0 304 304;' xml:space='preserve'%3E%3Cpolygon points='152.5,258 41.7,66 263.4,66'/%3E%3C/svg%3E");
     border: solid 3px black;
   }
-  ::-webkit-scrollbar-button:vertical:start:decrement {
+  &::-webkit-scrollbar-button:vertical:start:decrement {
     border: solid 3px black;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 304 304' style='enable-background:new 0 0 304 304;transform:rotate(180deg)' xml:space='preserve'%3E%3Cpolygon points='152.5,258 41.7,66 263.4,66'/%3E%3C/svg%3E");
   }
-  ::-webkit-scrollbar-button:vertical:end:increment,
-  ::-webkit-scrollbar-button:vertical:start:decrement {
+  &::-webkit-scrollbar-button:vertical:end:increment,
+  &::-webkit-scrollbar-button:vertical:start:decrement {
     display: block;
   }
 `;

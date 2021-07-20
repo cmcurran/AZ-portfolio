@@ -62,7 +62,7 @@ const styles = {
     padding: 4rem 0 1rem 1.666vw;
     padding: 4rem 0 1rem calc(var(--vw, 1vw) * 1.666);
     border-bottom: 2px solid black;
-    font-family: "MG Mono";
+    font-family: "MG Semi-Mono";
     margin-bottom: 0.5rem;
     font-size: calc(6px + 2.6vw);
     font-size: calc(6px + (var(--vw, 1vw) * 2.6));
