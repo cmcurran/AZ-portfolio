@@ -22,7 +22,7 @@ import { Home } from "./Views/Home";
 import { TurboSculpture } from "./Views/TurboSculpture";
 import { About } from "./Views/About";
 import { Work } from "./Views/Work";
-import { Work as workCopy } from "./Copy";
+import { Work as workCopy } from "./Copy/Copy";
 import { Gallery } from "./Components/Gallery";
 
 // Use a custom wrapper to prevent passing through DOM props

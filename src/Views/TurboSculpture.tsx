@@ -6,7 +6,7 @@ import { NavLarge, NavSmall } from "../Components/TurboSculpture/Nav";
 
 import { useScrollPosition } from "../UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
-import { turboSculpture } from "../Copy";
+import { turboSculpture } from "../Copy/Research/Balkans/TurboSculpture";
 
 import { css, Global } from "@emotion/react";
 import { GlobalStyles } from "../GlobalStyles";

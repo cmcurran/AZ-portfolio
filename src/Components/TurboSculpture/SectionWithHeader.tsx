@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { turboSculptureEndnotes } from "../../Copy";
+import { turboSculptureEndnotes } from "../../Copy/Research/Balkans/TurboSculpture";
+
 const findIndexes = (str: string, searchFor: string) => {
   const indices = [];
   for (var i = 0; i < str.length; i++) {

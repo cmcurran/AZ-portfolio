@@ -91,7 +91,7 @@ export const Gallery: React.FC<
       <ScrollDiv
         navHeight={navHeight}
         height={height}
-        css={[styles.right, styles.section, css``]}
+        css={[styles.right, styles.section]}
       >
         {content.gallery.map((item, i) => (
           <div css={styles.galleryWrapper}>
@@ -131,7 +131,7 @@ const styles = {
   `,
   right: (theme: Theme) => css`
     ${theme.media.borderColumnRowRight}
-    max-height:100%;
+    max-height: none;
   `,
   section: css`
     display: flex;
@@ -216,7 +216,7 @@ const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
   }`}
 
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 6rem 2rem;
 
   &::-webkit-scrollbar {
     background-color: white;

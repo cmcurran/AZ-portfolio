@@ -11,7 +11,7 @@ export const Work: React.FC<
         works: {
           title: string;
           date: string;
-          path?: string;
+          path?: string | null;
           work?: {
             title: string;
             date: string;
@@ -33,7 +33,7 @@ export const Work: React.FC<
           work.path ? (
             <Link
               to={`/work/${work.path}`}
-              css={styles.itemRow}
+              css={[styles.itemRow, styles.hover]}
               key={work.title}
             >
               <span css={styles.item}>{work.title}</span>
@@ -80,10 +80,6 @@ const styles = {
     transition: ${theme.transition.background};
     justify-content: space-between;
 
-    :hover {
-      background-color: ${theme.colors.green};
-    }
-
     @media ${theme.media.minWidth1000} {
       font-size: 38px;
     }
@@ -115,6 +111,11 @@ const styles = {
     @media ${theme.media.minWidth1000} {
       min-width: 245px;
       padding: 0 2rem;
+    }
+  `,
+  hover: (theme: Theme) => css`
+    :hover {
+      background-color: ${theme.colors.green};
     }
   `,
 };

@@ -1,6 +1,6 @@
 import { css, Theme } from "@emotion/react";
 import { RouteComponentProps } from "@reach/router";
-import { About as copy } from "../Copy";
+import { About as copy } from "../Copy/Copy";
 
 export const About = (_props: RouteComponentProps) => (
   <div css={styles.wrapper}>
