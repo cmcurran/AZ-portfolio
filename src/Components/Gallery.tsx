@@ -33,7 +33,6 @@ export const Gallery: React.FC<
   height && navHeight && console.log(height, navHeight, height - navHeight);
   return navHeight && height ? (
     <AppViewWrapper>
-      {" "}
       <div css={[styles.left, styles.section]}>
         <div css={styles.title}>{content.title}</div>
         <div css={styles.title}>{content.date}</div>
@@ -44,7 +43,6 @@ export const Gallery: React.FC<
         height={height}
         css={[styles.right, styles.section]}
       >
-        {" "}
         <div css={styles.about}>{content.about}</div>{" "}
         <div css={styles.about}>{content.about}</div>
         <div css={styles.about}>{content.about}</div>
@@ -88,14 +86,14 @@ const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
   &::-webkit-scrollbar-thumb {
     background-color: white;
     border: solid 3px black;
-    background-color: pink;
   }
   ::-webkit-scrollbar-button:vertical:end:increment {
-    background-color: red;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 304 304' style='enable-background:new 0 0 304 304;' xml:space='preserve'%3E%3Cpolygon points='152.5,258 41.7,66 263.4,66'/%3E%3C/svg%3E");
+    border: solid 3px black;
   }
   ::-webkit-scrollbar-button:vertical:start:decrement {
-    background-color: red;
-    /* background-image: url(http://i.imgur.com/rwmYdPk.png); */
+    border: solid 3px black;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 304 304' style='enable-background:new 0 0 304 304;transform:rotate(180deg)' xml:space='preserve'%3E%3Cpolygon points='152.5,258 41.7,66 263.4,66'/%3E%3C/svg%3E");
   }
   ::-webkit-scrollbar-button:vertical:end:increment,
   ::-webkit-scrollbar-button:vertical:start:decrement {

@@ -107,11 +107,11 @@ export const SectionWithHeader = ({
           return (
             <ImageWrapper>
               <Image
-                src={"../../Images/birdseye.jpg"}
+                src={"/Images/birdseye.jpg"}
                 alt="An aerial photograph of the village of Banatski Sokolac, surrounded by fields."
               />
               <Image
-                src={"../../Images/musiciansWithMarley.jpg"}
+                src={"/Images/musiciansWithMarley.jpg"}
                 alt="A group of 7 musicians posing around  the Bob Marley monument."
               />
               <Caption>

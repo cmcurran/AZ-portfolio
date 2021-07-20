@@ -7,7 +7,7 @@ import { NavLarge, NavSmall } from "../Components/TurboSculpture/Nav";
 import { useScrollPosition } from "../UseScrollPosition.js";
 import { RouteComponentProps } from "@reach/router";
 import { turboSculpture } from "../Copy";
-import marleyMaps from "../Images/marleyMaps.png";
+
 import { css, Global } from "@emotion/react";
 import { GlobalStyles } from "../GlobalStyles";
 //TODO debounce window listeners?
@@ -40,7 +40,7 @@ export const TurboSculpture = (_props: RouteComponentProps) => {
         <NavSmall content={turboSculpture.nav} show={hideOnScroll} />
         <ImgWrapper>
           <img
-            src={marleyMaps}
+            src={"/Images/marleyMaps.png"}
             style={{ width: "90%" }}
             alt="A Google Maps screenshot of the Bob Marley monument in Banatski Sokolac, dated July 2013."
           />
