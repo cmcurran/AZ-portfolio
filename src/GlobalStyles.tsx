@@ -39,7 +39,7 @@ export const GlobalStyles: React.FC = () => (
 
       em,
       i {
-        font-family: "MG";
+        font-family: "MG", Arial;
         font-style: italic;
         font-weight: 400;
       }
@@ -60,7 +60,7 @@ export const GlobalStyles: React.FC = () => (
       }
 
       body {
-        font-family: "MG";
+        font-family: "MG", Arial;
         overflow-wrap: break-word;
         color: black;
         margin: 0;
