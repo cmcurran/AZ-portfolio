@@ -13,13 +13,12 @@ export const App: React.FC<
   }
 > = ({ children, location, setNavHeight, navHeight }) => {
   let variant: string | undefined;
-  switch (location?.pathname) {
-    case "/about":
-      variant = "green";
-      break;
-    case "/work":
-      variant = "yellow";
-      break;
+  if (location?.pathname === "/about") {
+    variant = "green";
+  } else if (location?.pathname === "/work") {
+    variant = "yellow";
+  } else if (location?.pathname.includes("/work/")) {
+    variant = "orange";
   }
 
   const navRef = useRef<HTMLAnchorElement>(null);
@@ -89,6 +88,11 @@ const styles = {
   green: (theme: Theme) => css`
     :hover {
       background-color: ${theme.colors.green};
+    }
+  `,
+  orange: (theme: Theme) => css`
+    :hover {
+      background-color: ${theme.colors.orange};
     }
   `,
 };
