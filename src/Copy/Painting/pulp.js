@@ -1,7 +1,7 @@
 import React from "react";
 
 export const pulp = {
-  title: "This Work is Not Seminal",
+  title: "Pulp",
   date: "2014",
   about: (
     <>
