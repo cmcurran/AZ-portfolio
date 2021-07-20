@@ -5,6 +5,7 @@ import { AppViewWrapper } from "./AppViewWrapper";
 import styled from "@emotion/styled";
 import { useState } from "react";
 import { useEffect } from "react";
+import Lightbox from "react-image-lightbox";
 
 export const Gallery: React.FC<
   RouteComponentProps & {
@@ -23,12 +24,18 @@ export const Gallery: React.FC<
   }
 > = ({ content, navHeight }) => {
   const [height, setHeight] = useState<number>();
+  const [photoIndex, setPhotoIndex] = useState<number>(0);
+
+  const [open, setOpen] = useState<boolean>(false);
+
   useEffect(() => {
     if (!window) {
       return;
     }
     setHeight(window.innerHeight);
   }, [setHeight]);
+
+  const imageArray = content.gallery.map((item) => `/Images/${item.img}`);
 
   height && navHeight && console.log(height, navHeight, height - navHeight);
   return navHeight && height ? (
@@ -38,6 +45,47 @@ export const Gallery: React.FC<
         <div css={styles.title}>{content.date}</div>
         <div css={styles.about}>{content.about}</div>
       </div>
+      {open && (
+        <Lightbox
+          mainSrc={imageArray[photoIndex]}
+          nextSrc={imageArray[(photoIndex + 1) % imageArray.length]}
+          prevSrc={
+            imageArray[(photoIndex + imageArray.length - 1) % imageArray.length]
+          }
+          onCloseRequest={() => {
+            setOpen(false);
+            setPhotoIndex(0);
+          }}
+          onMovePrevRequest={() =>
+            setPhotoIndex(
+              (photoIndex + imageArray.length - 1) % imageArray.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % imageArray.length)
+          }
+          imageCaption={
+            <div
+              css={css`
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                text-align: center;
+                font-family: "MG Semi-Mono";
+                font-size: 16px;
+                > div {
+                  margin-right: 1rem;
+                }
+              `}
+            >
+              <div>{content.gallery[photoIndex].size}</div>
+              <div>{content.gallery[photoIndex].material}</div>
+              <div>{content.gallery[photoIndex].date}</div>
+            </div>
+          }
+        />
+      )}
       <ScrollDiv
         navHeight={navHeight}
         height={height}
@@ -50,7 +98,7 @@ export const Gallery: React.FC<
           `,
         ]}
       >
-        {content.gallery.map((item) => (
+        {content.gallery.map((item, i) => (
           <div
             css={css`
               display: flex;
@@ -61,22 +109,40 @@ export const Gallery: React.FC<
             `}
           >
             <img
+              alt={item.img}
               src={`/Images/${item.img}`}
               css={css`
                 width: 100%;
+                cursor: pointer;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                display: inline-block;
+
+                :hover {
+                  transform: scale(1.05);
+                  transition: transform 0.2s ease-out;
+                }
               `}
+              onClick={() => {
+                setPhotoIndex(i);
+                setOpen(true);
+              }}
             />
             <div
               css={css`
                 display: flex;
                 flex-direction: column;
                 width: 50%;
+                min-width: 400px;
                 font-family: "MG Semi-Mono";
                 align-self: flex-end;
                 font-size: 12px;
               `}
             >
-              <div>{item.size}</div> <div>{item.material}</div>
+              <div>{item.size}</div>
+              <div>{item.material}</div>
               <div>{item.date}</div>
             </div>
           </div>
@@ -95,8 +161,6 @@ const styles = {
   right: (theme: Theme) => css`
     ${theme.media.borderColumnRowRight}
     max-height:100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
   `,
   section: css`
     display: flex;
@@ -111,8 +175,12 @@ const styles = {
 };
 
 const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
-  max-height: ${({ navHeight, height }) =>
-    `${height - navHeight - 1}px`} !important;
+  ${({ theme, navHeight, height }) =>
+    `@media ${theme.media.minWidth1000}{
+    max-height: ${height - navHeight - 1}px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }`}
 
   &::-webkit-scrollbar {
     background-color: white;

@@ -14,6 +14,8 @@ import "./fonts/SuisseIntl-RegularItalic.otf";
 import "./fonts/SuisseWorks-Book.otf";
 import "./fonts/SuisseWorks-BookItalic.otf";
 
+import "react-image-lightbox/style.css";
+
 import { App } from "./App";
 import { Router } from "@reach/router";
 import { Home } from "./Views/Home";

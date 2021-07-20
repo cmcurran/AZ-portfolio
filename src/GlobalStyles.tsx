@@ -3,6 +3,9 @@ import { css, Global } from "@emotion/react";
 export const GlobalStyles: React.FC = () => (
   <Global
     styles={css`
+      .ril__captionContent {
+        width: 100%;
+      }
       html {
         scroll-behavior: smooth;
       }
