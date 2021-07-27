@@ -2,30 +2,21 @@ import React, { useEffect, useState } from "react";
 import { css, Theme } from "@emotion/react";
 import { RouteComponentProps } from "@reach/router";
 import { AppViewWrapper } from "./AppViewWrapper";
-import Lightbox from "react-image-lightbox";
 import debounce from "lodash.debounce";
 import { ScrollDiv } from "./Styled/ScrollDiv";
 
-export const Gallery: React.FC<
+export const Degrowth: React.FC<
   RouteComponentProps & {
     navHeight: number | undefined;
     content: {
       title: string;
       date: string;
+      button: { url: string; copy: string };
       about: React.ReactNode;
-      gallery: {
-        img: string;
-        size: string;
-        material: string;
-        date: string;
-      }[];
     };
   }
 > = ({ content, navHeight }) => {
   const [height, setHeight] = useState<number>();
-  const [photoIndex, setPhotoIndex] = useState<number>(0);
-
-  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (!window) {
@@ -49,39 +40,8 @@ export const Gallery: React.FC<
     };
   }, [height, setHeight]);
 
-  const imageArray = content.gallery.map((item) => `/Images/${item.img}`);
-
   return navHeight && height ? (
     <AppViewWrapper>
-      {open && (
-        <Lightbox
-          mainSrc={imageArray[photoIndex]}
-          nextSrc={imageArray[(photoIndex + 1) % imageArray.length]}
-          prevSrc={
-            imageArray[(photoIndex + imageArray.length - 1) % imageArray.length]
-          }
-          onCloseRequest={() => {
-            setOpen(false);
-            setPhotoIndex(0);
-          }}
-          onMovePrevRequest={() =>
-            setPhotoIndex(
-              (photoIndex + imageArray.length - 1) % imageArray.length
-            )
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % imageArray.length)
-          }
-          imageCaption={
-            <div css={styles.lightboxCaptionWrapper}>
-              <div>{content.gallery[photoIndex].size}</div>
-              <div>{content.gallery[photoIndex].material}</div>
-              <div>{content.gallery[photoIndex].date}</div>
-            </div>
-          }
-        />
-      )}
-
       <ScrollDiv
         navHeight={navHeight}
         height={height}
@@ -89,6 +49,19 @@ export const Gallery: React.FC<
       >
         <div css={styles.title}>{content.title}</div>
         <div css={styles.title}>{content.date}</div>
+        <a
+          href={content.button.url}
+          css={styles.linkButton}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {content.button.copy}
+          <img
+            src={"/Images/northeastArrow.svg"}
+            css={styles.arrow}
+            alt="arrow"
+          />
+        </a>
         <div css={styles.about}>{content.about}</div>
       </ScrollDiv>
 
@@ -97,24 +70,11 @@ export const Gallery: React.FC<
         height={height}
         css={[styles.right, styles.section]}
       >
-        {content.gallery.map((item, i) => (
-          <div css={styles.galleryWrapper}>
-            <img
-              alt={item.img}
-              src={`/Images/${item.img}`}
-              css={styles.image}
-              onClick={() => {
-                setPhotoIndex(i);
-                setOpen(true);
-              }}
-            />
-            <div css={styles.galleryCaptionWrapper}>
-              <div>{item.size}</div>
-              <div>{item.material}</div>
-              <div>{item.date}</div>
-            </div>
-          </div>
-        ))}
+        <img
+          src={"/Images/degrowth.svg"}
+          css={styles.degrowthImage}
+          alt="The Degrowth Toolbox for Artistic Practices"
+        />
       </ScrollDiv>
     </AppViewWrapper>
   ) : null;
@@ -137,6 +97,8 @@ const styles = {
   right: (theme: Theme) => css`
     ${theme.media.borderColumnRowRight}
     max-height: none;
+    padding: 0 !important;
+    background-color: black;
   `,
   section: css`
     display: flex;
@@ -208,5 +170,32 @@ const styles = {
       transform: scale(1.05);
       transition: transform 0.2s ease-out;
     }
+  `,
+  linkButton: (theme: Theme) => css`
+    font-size: 24px;
+    border: 5px solid black;
+    align-self: flex-start;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    transition: ${theme.transition.background};
+
+    @media ${theme.media.maxWidth759} {
+      margin: 8.42105vw 0;
+      margin: calc(var(--vw, 1vw) * 8.42105) 0;
+      padding: 2.1052vw 4.21052vw;
+      padding: calc(var(--vw, 1vw) * 2.1052) calc(var(--vw, 1vw) * 4.21052);
+    }
+
+    :hover {
+      background: ${theme.colors.green};
+    }
+  `,
+  degrowthImage: css`
+    height: 100%;
+    max-width: 100%;
+  `,
+  arrow: css`
+    width: 22px;
+    padding-left: 0.5rem;
   `,
 };

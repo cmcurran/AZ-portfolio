@@ -19,6 +19,8 @@ const theme: Theme = {
     color: "color 0.3s ease-out",
   },
   media: {
+    minWidth600: "(min-width: 600px)",
+    maxWidth599: "(max-width: 599px)",
     minWidth760: "(min-width: 760px)",
     maxWidth759: "(max-width: 759px)",
     minWidth1000: "(min-width: 1000px)",

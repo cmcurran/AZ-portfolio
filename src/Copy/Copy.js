@@ -3,6 +3,7 @@ import { pulp } from "./Painting/pulp.js";
 import { seminal } from "./Painting/seminal.js";
 import { queerIndigenous } from "./Painting/QueerIndigenous.js";
 import { nothingLeft } from "./Painting/NothingLeft.js";
+import { degrowth } from "./Research/Degrowth/degrowth.js";
 
 export const About = {
   bioText: [
@@ -27,12 +28,13 @@ export const Work = {
   sections: [
     {
       header: "artistic research",
-      variant: "",
+      variant: "degrowth",
       works: [
         {
-          path: null,
+          path: "The-Degrowth-Toolbox-for-Artistic-Practices",
           title: "The Degrowth Toolbox for Artistic Practices",
           date: "ongoing",
+          work: degrowth,
         },
         {
           path: null,

@@ -24,6 +24,8 @@ import { About } from "./Views/About";
 import { Work } from "./Views/Work";
 import { Work as workCopy } from "./Copy/Copy";
 import { Gallery } from "./Components/Gallery";
+import { Placeholder } from "./Components/Placeholder";
+import { Degrowth } from "./Components/Degrowth";
 
 // Use a custom wrapper to prevent passing through DOM props
 // to a non-DOM element.
@@ -45,16 +47,32 @@ const Apapa = () => {
                 if (!work.path) {
                   return null;
                 }
-
-                return (
-                  <Gallery
-                    path={`work/${work.path}`}
-                    content={work.work}
-                    navHeight={navHeight}
-                  />
-                );
+                if (section.variant === "gallery") {
+                  return (
+                    <Gallery
+                      path={`work/${work.path}`}
+                      content={work.work as GalleryContent}
+                      navHeight={navHeight}
+                    />
+                  );
+                }
+                if (section.variant === "degrowth") {
+                  return (
+                    <Degrowth
+                      path={`work/${work.path}`}
+                      content={work.work as DegrowthContent}
+                      navHeight={navHeight}
+                    />
+                  );
+                }
               });
             })}
+            <Placeholder
+              path={
+                "work/The-Plan-for-the-Cultural-Consolidation-of-the-Balkan-Peninsula"
+              }
+            />
+            <Placeholder path="work/Bodies-in-Alliance-Bodies-in-Defiance" />
           </App>
           <TurboSculpture path="turbosculpture" />
         </Router>
@@ -64,3 +82,22 @@ const Apapa = () => {
 };
 
 ReactDOM.render(<Apapa />, document.getElementById("root"));
+
+type GalleryContent = {
+  title: string;
+  date: string;
+  about: React.ReactNode;
+  gallery: {
+    img: string;
+    size: string;
+    material: string;
+    date: string;
+  }[];
+};
+
+type DegrowthContent = {
+  title: string;
+  date: string;
+  button: { url: string; copy: string };
+  about: React.ReactNode;
+};

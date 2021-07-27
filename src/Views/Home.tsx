@@ -42,6 +42,10 @@ const styles = {
   `,
   linkText: (theme: Theme) => css`
     font-size: 75px;
+    @media ${theme.media.maxWidth599} {
+      font-size: 10vw;
+      font-size: calc(var(--vw, 1vw) * 10);
+    }
     @media ${theme.media.minWidth1000} {
       font-size: 5.2083vw;
       font-size: calc(var(--vw, 1vw) * 5.2083);

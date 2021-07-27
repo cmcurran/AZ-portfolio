@@ -7,7 +7,7 @@ export const Work: React.FC<
     content: {
       sections: {
         header: string;
-        variant: string; //"gallery" | ""
+        variant: string; //"gallery" | "degrowth"
         works: {
           title: string;
           date: string;
@@ -16,7 +16,7 @@ export const Work: React.FC<
             title: string;
             date: string;
             about: React.ReactNode;
-            gallery: { img: string; size: string; material: string }[];
+            gallery?: { img: string; size: string; material: string }[];
           };
         }[];
       }[];
@@ -29,23 +29,55 @@ export const Work: React.FC<
         <div css={styles.sectionHeader} key={section.header}>
           {section.header}
         </div>
-        {section.works.map((work) =>
-          work.path ? (
-            <Link
-              to={`/work/${work.path}`}
-              css={[styles.itemRow, styles.hover]}
-              key={work.title}
-            >
-              <span css={styles.item}>{work.title}</span>
-              <span css={styles.date}>{work.date}</span>
-            </Link>
-          ) : (
-            <div css={styles.itemRow} key={work.title}>
-              <span css={styles.item}>{work.title}</span>
-              <span css={styles.date}>{work.date}</span>
-            </div>
-          )
-        )}
+        {section.works.map((work) => {
+          if (work.path) {
+            return (
+              <Link
+                to={`${work.path}`}
+                css={[styles.itemRow, styles.hover]}
+                key={work.title}
+              >
+                <span css={styles.item}>{work.title}</span>
+                <span css={styles.date}>{work.date}</span>
+              </Link>
+            );
+          } else {
+            if (work.title === "Bodies in Alliance / Bodies in Defiance") {
+              return (
+                <Link
+                  to={"Bodies-in-Alliance-Bodies-in-Defiance"}
+                  css={[styles.itemRow, styles.hover]}
+                  key={work.title}
+                >
+                  <span css={styles.item}>{work.title}</span>
+                  <span css={styles.date}>{work.date}</span>
+                </Link>
+              );
+            }
+            if (
+              work.title ===
+              "The Plan for the Cultural Consolidation of the Balkan Peninsula"
+            ) {
+              return (
+                <Link
+                  to="The-Plan-for-the-Cultural-Consolidation-of-the-Balkan-Peninsula"
+                  css={[styles.itemRow, styles.hover]}
+                  key={work.title}
+                >
+                  <span css={styles.item}>{work.title}</span>
+                  <span css={styles.date}>{work.date}</span>
+                </Link>
+              );
+            }
+
+            return (
+              <div css={styles.itemRow} key={work.title}>
+                <span css={styles.item}>{work.title}</span>
+                <span css={styles.date}>{work.date}</span>
+              </div>
+            );
+          }
+        })}
       </>
     ))}
   </div>

@@ -13,7 +13,10 @@ export const App: React.FC<
   }
 > = ({ children, location, setNavHeight, navHeight }) => {
   let variant: string | undefined;
-  if (location?.pathname === "/about") {
+  if (
+    location?.pathname === "/about" ||
+    location?.pathname === "/work/The-Degrowth-Toolbox-for-Artistic-Practices"
+  ) {
     variant = "green";
   } else if (location?.pathname === "/work") {
     variant = "yellow";
@@ -79,6 +82,11 @@ const styles = {
     transition: ${theme.transition.background};
     /* parent is sending height 100% to child divs to fix a reach router issue this resets it */
     height: auto !important;
+
+    @media ${theme.media.maxWidth599} {
+      font-size: 10vw;
+      padding-left: 2rem;
+    }
   `,
   yellow: (theme: Theme) => css`
     :hover {

@@ -15,6 +15,8 @@ declare module "@emotion/react" {
     };
     transition: { background: string; color: string };
     media: {
+      minWidth600: string;
+      maxWidth599: string;
       minWidth760: string;
       maxWidth759: string;
       minWidth1000: string;
