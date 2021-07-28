@@ -30,46 +30,81 @@ export const nothingLeft = {
   gallery: [
     {
       img: "nothingLeft1.jpg",
+      thumb: "nothingLeftThumb1.jpg",
       size: "58 × 70 cm",
       material: "Acrylic paint, latex paint, glue, newspaper.",
       date: "2016",
+      dimensions: {
+        width: "1764",
+        height: "2178",
+      },
     },
     {
       img: "nothingLeft2.jpg",
+      thumb: "nothingLeftThumb2.jpg",
       size: "35 × 59 cm",
       material: "Acrylic paint, latex paint, glue, newspaper.",
       date: "2016",
+      dimensions: {
+        width: "1982",
+        height: "3376",
+      },
     },
     {
       img: "nothingLeft3.jpg",
+      thumb: "nothingLeftThumb3.jpg",
       size: "43 × 33 cm",
       material: "Latex paint, charcoal, glue, tissue, found paper.",
       date: "2016",
+      dimensions: {
+        width: "3252",
+        height: "2526",
+      },
     },
     {
       img: "nothingLeft4.jpg",
+      thumb: "nothingLeftThumb4.jpg",
       size: "30 × 128 cm",
       material:
         "Acrylic paint, latex paint, charcoal, glue, cardboard, newspaper.",
       date: "2016",
+      dimensions: {
+        width: "820",
+        height: "3468",
+      },
     },
     {
       img: "nothingLeft5.jpg",
+      thumb: "nothingLeftThumb5.jpg",
       size: "113 × 184 cm",
       material: "Acrylic paint, latex paint, glue, found paper.",
       date: "2016",
+      dimensions: {
+        width: "2152",
+        height: "3336",
+      },
     },
     {
       img: "nothingLeft6.jpg",
+      thumb: "nothingLeftThumb6.jpg",
       size: "95 × 81.5 cm",
       material: "Acrylic paint, latex paint, charcoal, glue, newspaper.",
       date: "2016",
+      dimensions: {
+        width: "2763",
+        height: "2358",
+      },
     },
     {
       img: "nothingLeft7.jpg",
+      thumb: "nothingLeftThumb7.jpg",
       size: "23 × 34 cm",
       material: "Acrylic paint, latex paint, copy paper.",
       date: "2016",
+      dimensions: {
+        width: "2272",
+        height: "3244",
+      },
     },
   ],
 };

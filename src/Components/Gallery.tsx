@@ -5,21 +5,12 @@ import { AppViewWrapper } from "./AppViewWrapper";
 import Lightbox from "react-image-lightbox";
 import debounce from "lodash.debounce";
 import { ScrollDiv } from "./Styled/ScrollDiv";
+import { ImageRenderer } from "./ImageRenderer";
 
 export const Gallery: React.FC<
   RouteComponentProps & {
     navHeight: number | undefined;
-    content: {
-      title: string;
-      date: string;
-      about: React.ReactNode;
-      gallery: {
-        img: string;
-        size: string;
-        material: string;
-        date: string;
-      }[];
-    };
+    content: GalleryContent;
   }
 > = ({ content, navHeight }) => {
   const [height, setHeight] = useState<number>();
@@ -49,16 +40,28 @@ export const Gallery: React.FC<
     };
   }, [height, setHeight]);
 
-  const imageArray = content.gallery.map((item) => `/Images/${item.img}`);
+  const imageArray = content.gallery.map((item) => ({
+    img: `/Images/${item.img}`,
+    thumb: `/Images/${item.thumb}`,
+  }));
 
   return navHeight && height ? (
     <AppViewWrapper>
       {open && (
         <Lightbox
-          mainSrc={imageArray[photoIndex]}
-          nextSrc={imageArray[(photoIndex + 1) % imageArray.length]}
+          mainSrc={imageArray[photoIndex].img}
+          nextSrc={imageArray[(photoIndex + 1) % imageArray.length].img}
           prevSrc={
             imageArray[(photoIndex + imageArray.length - 1) % imageArray.length]
+              .img
+          }
+          mainSrcThumbnail={imageArray[photoIndex].thumb}
+          nextSrcThumbnail={
+            imageArray[(photoIndex + 1) % imageArray.length].thumb
+          }
+          prevSrcThumbnail={
+            imageArray[(photoIndex + imageArray.length - 1) % imageArray.length]
+              .thumb
           }
           onCloseRequest={() => {
             setOpen(false);
@@ -99,10 +102,10 @@ export const Gallery: React.FC<
       >
         {content.gallery.map((item, i) => (
           <div css={styles.galleryWrapper}>
-            <img
-              alt={item.img}
-              src={`/Images/${item.img}`}
-              css={styles.image}
+            <ImageRenderer
+              img={item.img}
+              thumb={item.thumb}
+              dimensions={item.dimensions}
               onClick={() => {
                 setPhotoIndex(i);
                 setOpen(true);
@@ -209,4 +212,18 @@ const styles = {
       transition: transform 0.2s ease-out;
     }
   `,
+};
+
+export type GalleryContent = {
+  title: string;
+  date: string;
+  about: React.ReactNode;
+  gallery: {
+    img: string;
+    thumb: string;
+    size: string;
+    material: string;
+    date: string;
+    dimensions: { width: string; height: string };
+  }[];
 };

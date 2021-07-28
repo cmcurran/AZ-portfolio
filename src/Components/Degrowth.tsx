@@ -8,12 +8,7 @@ import { ScrollDiv } from "./Styled/ScrollDiv";
 export const Degrowth: React.FC<
   RouteComponentProps & {
     navHeight: number | undefined;
-    content: {
-      title: string;
-      date: string;
-      button: { url: string; copy: string };
-      about: React.ReactNode;
-    };
+    content: DegrowthContent;
   }
 > = ({ content, navHeight }) => {
   const [height, setHeight] = useState<number>();
@@ -118,59 +113,7 @@ const styles = {
       padding-bottom: 2rem;
     }
   `,
-  galleryWrapper: (theme: Theme) => css`
-    display: flex;
-    flex-direction: column;
-    &:not(:last-child) {
-      margin-bottom: 4rem;
-    }
 
-    @media ${theme.media.minWidth1000} {
-      &:not(:last-child) {
-        margin-bottom: 8rem;
-      }
-    }
-  `,
-  lightboxCaptionWrapper: css`
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    text-align: center;
-    font-family: "MG Semi-Mono";
-    font-size: 16px;
-    > div {
-      margin-right: 1rem;
-    }
-  `,
-  galleryCaptionWrapper: (theme: Theme) => css`
-    display: flex;
-    flex-direction: column;
-    font-family: "MG Semi-Mono";
-    font-size: 12px;
-
-    @media ${theme.media.minWidth1000} {
-      min-width: 400px;
-      > div {
-        width: 50%;
-        align-self: flex-end;
-      }
-    }
-  `,
-  image: css`
-    width: 100%;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-
-    :hover {
-      transform: scale(1.05);
-      transition: transform 0.2s ease-out;
-    }
-  `,
   linkButton: (theme: Theme) => css`
     font-size: 24px;
     border: 5px solid black;
@@ -198,4 +141,11 @@ const styles = {
     width: 22px;
     padding-left: 0.5rem;
   `,
+};
+
+export type DegrowthContent = {
+  title: string;
+  date: string;
+  button: { url: string; copy: string };
+  about: React.ReactNode;
 };
