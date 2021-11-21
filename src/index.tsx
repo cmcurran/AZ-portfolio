@@ -3,16 +3,10 @@ import ReactDOM from "react-dom";
 import ThemeProvider from "./ThemeProvider";
 import "./index.css";
 
-import "./fonts/MonumentGrotesk-Regular.otf";
-import "./fonts/MonumentGrotesk-Italic.otf";
-import "./fonts/MonumentGrotesk-Mono.otf";
-import "./fonts/MonumentGrotesk-Semi-Mono.otf";
-
-import "./fonts/SuisseIntl-Regular.otf";
-import "./fonts/SuisseIntl-Bold.otf";
-import "./fonts/SuisseIntl-RegularItalic.otf";
-import "./fonts/SuisseWorks-Book.otf";
-import "./fonts/SuisseWorks-BookItalic.otf";
+import "./fonts/SangBleuKingdom-Medium.otf";
+import "./fonts/SangBleuKingdom-MediumItalic.otf";
+import "./fonts/SangBleuKingdom-Regular.otf";
+import "./fonts/SangBleuKingdom-RegularItalic.otf";
 
 import "react-image-lightbox/style.css";
 
@@ -26,6 +20,9 @@ import { Work as workCopy } from "./Copy/Copy";
 import { Gallery, GalleryContent } from "./Components/Gallery";
 import { Placeholder } from "./Components/Placeholder";
 import { Degrowth, DegrowthContent } from "./Components/Degrowth";
+import { Contact } from "./Views/Contact";
+import { Statement } from "./Views/Statement";
+import { Projects } from "./Views/Projects";
 
 // Use a custom wrapper to prevent passing through DOM props
 // to a non-DOM element.
@@ -40,8 +37,11 @@ const Apapa = () => {
         <Router primary={false} component={RouterComponent}>
           <App path="/" setNavHeight={setNavHeight} navHeight={navHeight}>
             <Home path="/" />
-            <About path="/about" />
-            <Work path="/work" content={workCopy} />
+            <About path="/about" navHeight={navHeight} />
+            <Contact path="/contact" />
+            <Statement path="/statement" />
+            <Projects path="projects" />
+            {/* <Work path="/work" content={workCopy} />
             {workCopy.sections.map((section) => {
               return section.works.map((work) => {
                 if (!work.path) {
@@ -72,9 +72,9 @@ const Apapa = () => {
                 "work/The-Plan-for-the-Cultural-Consolidation-of-the-Balkan-Peninsula"
               }
             />
-            <Placeholder path="work/Bodies-in-Alliance-Bodies-in-Defiance" />
+            <Placeholder path="work/Bodies-in-Alliance-Bodies-in-Defiance" />*/}
           </App>
-          <TurboSculpture path="turbosculpture" />
+          {/* <TurboSculpture path="turbosculpture" />  */}
         </Router>
       </ThemeProvider>
     </React.StrictMode>

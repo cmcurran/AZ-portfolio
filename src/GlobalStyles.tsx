@@ -15,7 +15,7 @@ export const GlobalStyles: React.FC = () => (
       body {
         height: 100%;
 
-        &::-webkit-scrollbar {
+        /* &::-webkit-scrollbar {
           background-color: white;
           border: solid 3px black;
         }
@@ -34,12 +34,12 @@ export const GlobalStyles: React.FC = () => (
         ::-webkit-scrollbar-button:vertical:end:increment,
         ::-webkit-scrollbar-button:vertical:start:decrement {
           display: block;
-        }
+        } */
       }
 
       em,
       i {
-        font-family: "MG", Arial;
+        font-family: "SangBleu", Arial;
         font-style: italic;
         font-weight: 400;
       }
@@ -60,7 +60,7 @@ export const GlobalStyles: React.FC = () => (
       }
 
       body {
-        font-family: "MG", Arial;
+        font-family: "SangBleu", Arial;
         overflow-wrap: break-word;
         color: black;
         margin: 0;

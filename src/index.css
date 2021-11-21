@@ -1,70 +1,35 @@
 @font-face {
-  font-family: "Suisse";
-  src: local("Suisse"), url(./fonts/SuisseIntl-Regular.otf) format("truetype");
+  font-family: "SangBleu";
+  src: local("SangBleu"),
+    url(./fonts/SangBleuKingdom-Regular.otf) format("truetype");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
-  font-family: "Suisse";
-  src: local("Suisse"), url(./fonts/SuisseIntl-Bold.otf) format("truetype");
-  font-weight: 600;
+  font-family: "SangBleu";
+  src: local("SangBleu"),
+    url(./fonts/SangBleuKingdom-Medium.otf) format("truetype");
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
-  font-family: "Suisse";
-  src: local("Suisse"),
-    url(./fonts/SuisseIntl-RegularItalic.otf) format("truetype");
+  font-family: "SangBleu";
+  src: local("SangBleu"),
+    url(./fonts/SangBleuKingdom-RegularItalic.otf) format("truetype");
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
 }
 
 @font-face {
-  font-family: "SuisseWorks";
-  src: local("SuisseWorks"),
-    url(./fonts/SuisseWorks-Book.otf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "SuisseWorks";
-  src: local("SuisseWorks"),
-    url(./fonts/SuisseWorks-BookItalic.otf) format("truetype");
-  font-weight: 400;
+  font-family: "SangBleu";
+  src: local("SangBleu"),
+    url(./fonts/SangBleuKingdom-MediumItalic.otf) format("truetype");
+  font-weight: 500;
   font-style: italic;
   font-stretch: normal;
-}
-
-@font-face {
-  font-family: "MG";
-  src: local("MG"), url(./fonts/MonumentGrotesk-Regular.otf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "MG";
-  src: local("MG"), url(./fonts/MonumentGrotesk-Italic.otf) format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "MG Mono";
-  src: local("MG Mono"),
-    url(./fonts/MonumentGrotesk-Mono.otf) format("truetype");
-}
-
-@font-face {
-  font-family: "MG Semi-Mono";
-  src: local("MG Semi-Mono"),
-    url(./fonts/MonumentGrotesk-Semi-Mono.otf) format("truetype");
 }

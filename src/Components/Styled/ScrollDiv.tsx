@@ -6,12 +6,13 @@ export const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
     max-height: ${height - navHeight - 1}px !important;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 4rem 16rem;
+    /* padding: 4rem 16rem; */
+    width:100%;
   }`}
 
   align-items: center;
-  padding: 3rem 2rem 6rem 2rem;
-
+  /* padding: 3rem 2rem 6rem 2rem; */
+  /* 
   &::-webkit-scrollbar {
     background-color: white;
     border: solid 3px black;
@@ -31,5 +32,5 @@ export const ScrollDiv = styled.div<{ navHeight: number; height: number }>`
   &::-webkit-scrollbar-button:vertical:end:increment,
   &::-webkit-scrollbar-button:vertical:start:decrement {
     display: block;
-  }
+  } */
 `;
