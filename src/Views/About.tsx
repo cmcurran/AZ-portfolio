@@ -34,7 +34,8 @@ export const About: React.FC<
       window.removeEventListener("resize", resizeListener);
     };
   }, [height, setHeight]);
-  return navHeight && height ? (
+
+  return (navHeight && height) || (height && navHeight === 0) ? (
     <AppViewWrapper>
       <div
         css={css`
@@ -57,6 +58,10 @@ export const About: React.FC<
             height: 100%;
             object-fit: cover;
             object-position: 0 20%;
+
+            @media (max-width: 900px) {
+              display: none;
+            }
           `}
           alt="Azadeh Zaghi"
         />
@@ -77,6 +82,12 @@ export const About: React.FC<
             padding-top: 8rem;
             margin-left: 20%;
             max-width: 500px;
+
+            @media (max-width: 900px) {
+              max-width: 600px;
+              padding: 5rem 2rem;
+              margin: 0;
+            }
           `}
         >
           <div
@@ -134,7 +145,9 @@ export const About: React.FC<
         </div>
       </ScrollDiv>
     </AppViewWrapper>
-  ) : null;
+  ) : (
+    <div>hihihi</div>
+  );
 };
 // <div css={styles.wrapper}>
 //   <div css={styles.innerWrapper}>

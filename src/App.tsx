@@ -103,7 +103,7 @@ export const App: React.FC<
           justify-content: center;
           align-items: center;
 
-          @media (min-width: 750px) {
+          @media (min-width: 900px) {
             display: none;
           }
         `}
@@ -114,16 +114,27 @@ export const App: React.FC<
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-transform: uppercase;
+            font-size: 20px;
           `}
         >
           <InterpunctSpacer />
-          <Link to="/statement">statement</Link>
+          <Link to="/statement" onClick={() => setIsOpen(false)}>
+            statement
+          </Link>
           <InterpunctSpacer />
-          <Link to="/projects">projects</Link>
+          <Link to="/projects" onClick={() => setIsOpen(false)}>
+            projects
+          </Link>
           <InterpunctSpacer />
-          <Link to="/about">about</Link>
+          <Link to="/about" onClick={() => setIsOpen(false)}>
+            about
+          </Link>
           <InterpunctSpacer />
-          <Link to="/contact">contact</Link> <InterpunctSpacer />
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            contact
+          </Link>{" "}
+          <InterpunctSpacer />
         </div>
         <IconWrapper onClick={() => setIsOpen(false)} show={true}>
           <IconX />
@@ -141,7 +152,7 @@ export const App: React.FC<
           border-bottom: solid black 1px;
           height: auto !important;
 
-          @media (max-width: 901px) {
+          @media (max-width: 900px) {
             display: none;
           }
         `}
@@ -231,7 +242,7 @@ const styles = {
     > div {
       height: 100%;
       max-height: 100%;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
   `,
   navbar: (theme: Theme) => css`

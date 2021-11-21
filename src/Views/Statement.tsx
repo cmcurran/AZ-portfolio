@@ -8,12 +8,18 @@ export const Statement = (_props: RouteComponentProps) => (
     css={css`
       display: flex;
       justify-content: center;
+
+      @media (max-width: 900px) {
+        padding: 9rem 2rem 5rem 2rem;
+      }
     `}
   >
     <div
       css={css`
         max-width: 600px;
-        padding-top: 8rem;
+        @media (min-width: 900px) {
+          padding-top: 8rem;
+        }
       `}
     >
       <div
