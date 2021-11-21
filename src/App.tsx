@@ -92,7 +92,7 @@ export const App: React.FC<
           padding: 2vw;
           padding: calc(var(--vw, 1vw) * 2);
 
-          background-color: white;
+          background-color: #e5e5e5;
           position: fixed;
           width: 100%;
           height: 100%;
