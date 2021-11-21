@@ -25,7 +25,10 @@ export const Home = (_props: RouteComponentProps) => (
     <div>
       <div
         css={css`
-          font-size: 52px;
+          font-size: 26px;
+          @media (min-width: 901px) {
+            font-size: 52px;
+          }
         `}
       >
         Azadeh Esmaili Zaghi
@@ -35,7 +38,11 @@ export const Home = (_props: RouteComponentProps) => (
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          font-size: 36px;
+          font-size: 20px;
+
+          @media (min-width: 901px) {
+            font-size: 36px;
+          }
         `}
       >
         <em>artist</em>
