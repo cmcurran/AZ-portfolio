@@ -100,6 +100,7 @@ export const About: React.FC<
           <div
             css={css`
               font-size: 16px;
+              padding-bottom: 6rem;
             `}
           >
             <p>
@@ -134,13 +135,29 @@ export const About: React.FC<
               <em>HDK-Valand, University of Gothenburg</em>, in which she has
               worked as a guest teacher and course developer.
             </p>
-            <p>
+            <p
+              css={css`
+                margin-bottom: 4rem;
+              `}
+            >
               She is currently a board member of both <em>Konstepidemin</em> and
               the <em>ICIA – Institute for Contemporary Ideas and Art</em>. She
               also holds the position of artistic educator and project leader at{" "}
               <em>Allas Ateljé</em> on Rymdtorget in Bergsjön, and artistic
               project leader at <em>Kulturstråket</em> in Bergsjön.
             </p>
+
+            <a
+              href="CV.pdf"
+              download
+              css={css`
+                font-weight: 500;
+                font-size: 20px;
+                text-decoration: underline;
+              `}
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </ScrollDiv>
