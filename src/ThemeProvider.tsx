@@ -30,7 +30,7 @@ const theme: Theme = {
     flexColumnRow: `
     display:flex;
     flex-direction: column;
-    @media (min-width:999px) {
+    @media (min-width:1000px) {
       flex-direction: row;
     }`,
     borderColumnRowLeft: `

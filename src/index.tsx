@@ -27,7 +27,7 @@ import { Projects } from "./Views/Projects";
 // to a non-DOM element.
 const RouterComponent: React.FC = ({ children }) => <>{children}</>;
 
-const Apapa = () => {
+const AZportfolio = () => {
   const [navHeight, setNavHeight] = useState<number>();
 
   return (
@@ -40,13 +40,16 @@ const Apapa = () => {
             <Contact path="/contact" />
             <Statement path="/statement" />
             <Projects path="projects" copy={workCopy} />
-            {workCopy.map((work) => (
-              <Gallery
-                path={`projects/${work.path}`}
-                content={work.work}
-                navHeight={navHeight}
-              />
-            ))}
+
+            {workCopy.map((year) => {
+              return year.work.map((work) => (
+                <Gallery
+                  path={`projects/${work.path}`}
+                  content={work.work}
+                  navHeight={navHeight}
+                />
+              ));
+            })}
 
             {/* <Work path="/work" content={workCopy} />
             {workCopy.sections.map((section) => {
@@ -88,4 +91,4 @@ const Apapa = () => {
   );
 };
 
-ReactDOM.render(<Apapa />, document.getElementById("root"));
+ReactDOM.render(<AZportfolio />, document.getElementById("root"));

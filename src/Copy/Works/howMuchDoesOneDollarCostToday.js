@@ -65,7 +65,7 @@ export const howMuchDoesOneDollarCostToday = {
         University, where she teaches business research and Macroeconomics.
       </p>
       <p>
-        <bold>Bread, How much does one dollar cost today?</bold>
+        <b>Bread, How much does one dollar cost today?</b>
       </p>
       <p>
         Bread, or <i>nan</i> in Persian, is the cheapest as well as most
@@ -85,7 +85,7 @@ export const howMuchDoesOneDollarCostToday = {
       </p>
 
       <p>
-        <bold>Gold, How much does one dollar cost today?</bold>
+        <b>Gold, How much does one dollar cost today?</b>
       </p>
       <p>
         This video documents the process of melting two Iranian gold coins
@@ -97,7 +97,7 @@ export const howMuchDoesOneDollarCostToday = {
       </p>
 
       <p>
-        <bold>The performance, How much does one dollar cost today?</bold>
+        <b>The performance, How much does one dollar cost today?</b>
       </p>
       <p>
         In this performance Zaghi places the gold razor between her lips and

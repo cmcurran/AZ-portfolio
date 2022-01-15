@@ -13,6 +13,13 @@ import { sacredGround } from "./Works/sacredGround";
 import { ifTheLordYourGodEnlargesYourTerritory } from "./Works/ifTheLordYourGodEnlargesYourTerritory";
 import { principlesOfHarmonyAndContrast } from "./Works/principlesOfHarmonyAndContrast";
 import { whenYourHistoryBecomesSomeoneElsesHistory } from "./Works/whenYourHistoryBecomesSomeoneElsesHistory";
+import { aMonumentOfTheCityToBuild } from "./Works/aMonumentOfTheCityToBuild";
+import { theVoiceOfLifeFromLimbo } from "./Works/theVoiceOfLifeFromLimbo";
+import { untrustableBlue } from "./Works/untrustableBlue";
+import { peaceBeyondTheWords } from "./Works/peaceBeyondTheWords";
+import { youAreNotGonnaDieOnARailInATrashBag } from "./Works/youAreNotGonnaDieOnARailInATrashBag";
+import { numbers } from "./Works/numbers";
+import { livingInWorldWar3 } from "./Works/livingInWorldWar3";
 
 export const About = {
   bioText: [
@@ -35,72 +42,138 @@ export const About = {
 
 export const Work = [
   {
-    path: "Lullaby-for-a-second-generation-immigrant",
-    title: "Lullaby for a second generation immigrant",
-    date: "2013",
-    work: lullabyForASecondGenerationImmigrant,
+    year: "2021",
+    work: [
+      {
+        path: "Peace-Beyond-the-Words",
+        title: "Peace Beyond the Words",
+        work: peaceBeyondTheWords,
+      },
+
+      {
+        path: "You-are-not-gonna-die-on-a-rail-in-a-trash-bag",
+        title: "You are not gonna die on a rail in a trash bag",
+        work: youAreNotGonnaDieOnARailInATrashBag,
+      },
+
+      {
+        path: "Work-in-progress-Numbers",
+        title: "Work in progress – [Numbers]",
+        work: numbers,
+      },
+
+      {
+        path: "Living-in-World-War-III",
+        title: "Living in World War III",
+        work: livingInWorldWar3,
+      },
+    ],
   },
 
   {
-    path: "Blue-eyed-brown-eyed",
-    title: "Blue eyed brown eyed",
-    date: "2014",
-    work: blueEyedBrownEyed,
+    year: "2020",
+    work: [
+      {
+        path: "A-monument-of-the-city-to-build",
+        title: "A monument of the city to build",
+        work: aMonumentOfTheCityToBuild,
+      },
+      {
+        path: "Untrustable-Blue",
+        title: "Untrustable Blue",
+        work: untrustableBlue,
+      },
+    ],
   },
 
   {
-    path: "How-much-does-one-dollar-cost-today",
-    title: "How much does one dollar cost today?",
-    date: "2015",
-    work: howMuchDoesOneDollarCostToday,
+    year: "2019",
+    work: [
+      {
+        path: "If-the-LORD-your-God-enlarges-your-territory",
+        title: "If the LORD your God enlarges your territory",
+        work: ifTheLordYourGodEnlargesYourTerritory,
+      },
+
+      {
+        path: "Principles-of-harmony-and-contrast",
+        title: "Principles of harmony and contrast",
+        work: principlesOfHarmonyAndContrast,
+      },
+
+      {
+        path: "When-your-history-becomes-someone-elses-history",
+        title: "When your history becomes someone else’s history",
+        work: whenYourHistoryBecomesSomeoneElsesHistory,
+      },
+
+      {
+        path: "The-voice-of-life-from-limbo",
+        title: "The voice of life from limbo",
+        date: "2019 –",
+        work: theVoiceOfLifeFromLimbo,
+      },
+    ],
   },
 
   {
-    path: "Transition",
-    title: "Transition",
-    date: "2015",
-    work: transition,
+    year: "2018",
+    work: [
+      {
+        path: "Keys-of-Heaven",
+        title: "Keys of Heaven",
+        work: keysOfHeaven,
+      },
+
+      {
+        path: "Memes-fran-Kalltorpsskolan",
+        title: "Memes från Kålltorpsskolan",
+        work: memesFranKalltorpsskolan,
+      },
+
+      {
+        path: "Sacred-ground",
+        title: "Sacred ground",
+        work: sacredGround,
+      },
+    ],
   },
 
   {
-    path: "Keys-of-Heaven",
-    title: "Keys of Heaven",
-    date: "2018",
-    work: keysOfHeaven,
+    year: "2015",
+    work: [
+      {
+        path: "How-much-does-one-dollar-cost-today",
+        title: "How much does one dollar cost today?",
+        work: howMuchDoesOneDollarCostToday,
+      },
+
+      {
+        path: "Transition",
+        title: "Transition",
+        work: transition,
+      },
+    ],
   },
 
   {
-    path: "Memes-från-Kålltorpsskolan",
-    title: "Memes från Kålltorpsskolan",
-    date: "2018",
-    work: memesFranKalltorpsskolan,
+    year: "2014",
+    work: [
+      {
+        path: "Blue-eyed-brown-eyed",
+        title: "Blue eyed brown eyed",
+        work: blueEyedBrownEyed,
+      },
+    ],
   },
-
   {
-    path: "Sacred-ground",
-    title: "Sacred ground",
-    date: "2018",
-    work: sacredGround,
-  },
-
-  {
-    path: "If-the-LORD-your-God-enlarges-your-territory",
-    title: "If the LORD your God enlarges your territory",
-    date: "2019",
-    work: ifTheLordYourGodEnlargesYourTerritory,
-  },
-
-  {
-    path: "Principles-of-harmony-and-contrast",
-    title: "Principles of harmony and contrast",
-    date: "2019",
-    work: principlesOfHarmonyAndContrast,
-  },
-
-  {
-    path: "When-your-history-becomes-someone-elses-history",
-    title: "When your history becomes someone else’s history",
-    date: "2019",
-    work: whenYourHistoryBecomesSomeoneElsesHistory,
+    year: "2013",
+    work: [
+      {
+        path: "Lullaby-for-a-second-generation-immigrant",
+        title: "Lullaby for a second generation immigrant",
+        work: lullabyForASecondGenerationImmigrant,
+      },
+    ],
   },
 ];

@@ -3,6 +3,9 @@ import { css, Global } from "@emotion/react";
 export const GlobalStyles: React.FC = () => (
   <Global
     styles={css`
+      .ril__toolbar {
+        background-color: transparent;
+      }
       .ril__captionContent {
         width: 100%;
       }

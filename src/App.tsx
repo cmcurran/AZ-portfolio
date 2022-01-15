@@ -140,12 +140,8 @@ export const App: React.FC<
           <IconX />
         </IconWrapper>
       </div>
-
       <div
         css={css`
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
           padding: 1rem 1.5rem;
           font-size: 20px;
           text-transform: uppercase;
@@ -153,7 +149,7 @@ export const App: React.FC<
           height: auto !important;
 
           @media (max-width: 900px) {
-            display: none;
+            padding: 0;
           }
         `}
         ref={navRef}
@@ -162,47 +158,50 @@ export const App: React.FC<
           css={css`
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
-            width: 15%;
+            justify-content: space-between;
+            @media (max-width: 900px) {
+              display: none;
+            }
           `}
         >
-          <Link to="/statement">statement</Link>
-          <InterpunctSpacer />
-          <Link to="/projects">projects</Link>
-          <InterpunctSpacer />
-        </div>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              width: 15%;
+            `}
+          >
+            <Link to="/statement">statement</Link>
+            <InterpunctSpacer />
+            <Link to="/projects">projects</Link>
+            <InterpunctSpacer />
+          </div>
 
-        <Link
-          to="/"
-          css={css`
-            text-transform: none;
-            font-weight: 500;
-          `}
-        >
-          Azadeh Esmaili Zaghi
-        </Link>
-        <div
-          css={css`
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            width: 15%;
-          `}
-        >
-          <InterpunctSpacer />
-          <Link to="/about">about</Link>
-          <InterpunctSpacer />
-          <Link to="/contact">contact</Link>
+          <Link
+            to="/"
+            css={css`
+              text-transform: none;
+              font-weight: 500;
+            `}
+          >
+            Azadeh Esmaili Zaghi
+          </Link>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              width: 15%;
+            `}
+          >
+            <InterpunctSpacer />
+            <Link to="/about">about</Link>
+            <InterpunctSpacer />
+            <Link to="/contact">contact</Link>
+          </div>
         </div>
       </div>
-
-      {/* <Link
-        to="/"
-        css={[styles.navbar, variant && styles[variant]]}
-        ref={navRef}
-      >
-        alexandra papademetriou
-      </Link> */}
       {children}
     </div>
   );
@@ -211,6 +210,7 @@ export const App: React.FC<
 const IconWrapper = styled.div<{ show: boolean }>`
   position: fixed;
   cursor: pointer;
+  max-height: 45px !important;
 
   visibility: ${(props) => (props.show ? "visible" : "hidden")};
   transition: all 200ms ${(props) => (props.show ? "ease-in" : "ease-out")};

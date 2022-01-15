@@ -84,6 +84,40 @@ export const Gallery: React.FC<
           // }
         />
       )}
+      {/* text mobile */}
+      <ScrollDiv
+        navHeight={navHeight}
+        height={height}
+        css={[
+          css`
+            max-height: none;
+            @media (min-width: 1000px) {
+              display: none;
+            }
+          `,
+          styles.section,
+        ]}
+      >
+        <div
+          css={css`
+            padding: 8rem 10vw 4rem 5vw;
+            padding: 8rem calc(var(--vw, 1vw) * 10) 4rem
+              calc(var(--vw, 1vw) * 5);
+          `}
+        >
+          <div css={styles.title}>{content.title}</div>
+          <div css={styles.about}>
+            {content.date} <br /> {content.material}
+            {content.timeLength && (
+              <>
+                <br />
+                {content.timeLength}
+              </>
+            )}
+          </div>
+          <div css={styles.about}>{content.about}</div>
+        </div>
+      </ScrollDiv>
 
       <ScrollDiv
         navHeight={navHeight}
@@ -109,6 +143,8 @@ export const Gallery: React.FC<
           </div>
         ))}
       </ScrollDiv>
+
+      {/* text desktop */}
       <ScrollDiv
         navHeight={navHeight}
         height={height}
@@ -154,6 +190,10 @@ const styles = {
   right: (theme: Theme) => css`
     /* ${theme.media.borderColumnRowRight} */
     max-height: none;
+
+    @media ${theme.media.maxWidth999} {
+      display: none;
+    }
   `,
 
   section: css`

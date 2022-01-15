@@ -51,15 +51,15 @@ export const memesFranKalltorpsskolan = {
     </>
   ),
   gallery: [
-    {
-      img: "memesFranKalltorpsSkolan1.mov",
-      thumb: "memesFranKalltorpsSkolan1.mov",
+    // {
+    //   img: "memesFranKalltorpsSkolan1.mov",
+    //   thumb: "memesFranKalltorpsSkolan1.mov",
 
-      dimensions: {
-        width: "1920",
-        height: "1080",
-      },
-    },
+    //   dimensions: {
+    //     width: "1920",
+    //     height: "1080",
+    //   },
+    // },
 
     {
       img: "memesFranKalltorpsSkolan2.jpg",
