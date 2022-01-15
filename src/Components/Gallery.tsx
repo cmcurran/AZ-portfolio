@@ -75,13 +75,13 @@ export const Gallery: React.FC<
           onMoveNextRequest={() =>
             setPhotoIndex((photoIndex + 1) % imageArray.length)
           }
-          imageCaption={
-            <div css={styles.lightboxCaptionWrapper}>
-              <div>{content.gallery[photoIndex].size}</div>
-              <div>{content.gallery[photoIndex].material}</div>
-              <div>{content.gallery[photoIndex].date}</div>
-            </div>
-          }
+          // imageCaption={
+          //   <div css={styles.lightboxCaptionWrapper}>
+          //     <div>{content.gallery[photoIndex].size}</div>
+          //     <div>{content.gallery[photoIndex].material}</div>
+          //     <div>{content.gallery[photoIndex].date}</div>
+          //   </div>
+          // }
         />
       )}
 
@@ -89,16 +89,6 @@ export const Gallery: React.FC<
         navHeight={navHeight}
         height={height}
         css={[styles.left, styles.section]}
-      >
-        <div css={styles.title}>{content.title}</div>
-        <div css={styles.title}>{content.date}</div>
-        <div css={styles.about}>{content.about}</div>
-      </ScrollDiv>
-
-      <ScrollDiv
-        navHeight={navHeight}
-        height={height}
-        css={[styles.right, styles.section]}
       >
         {content.gallery.map((item, i) => (
           <div css={styles.galleryWrapper}>
@@ -111,13 +101,35 @@ export const Gallery: React.FC<
                 setOpen(true);
               }}
             />
-            <div css={styles.galleryCaptionWrapper}>
+            {/* <div css={styles.galleryCaptionWrapper}>
               <div>{item.size}</div>
               <div>{item.material}</div>
               <div>{item.date}</div>
-            </div>
+            </div> */}
           </div>
         ))}
+      </ScrollDiv>
+      <ScrollDiv
+        navHeight={navHeight}
+        height={height}
+        css={[styles.right, styles.section]}
+      >
+        <div
+          css={css`
+            padding: 8rem 12rem 4rem 6rem;
+          `}
+        >
+          <div css={styles.title}>{content.title}</div>
+          <div
+            css={css`
+              font-size: 20px;
+              padding-bottom: 2rem;
+            `}
+          >
+            {content.date} <br /> {content.material}
+          </div>
+          <div css={styles.about}>{content.about}</div>
+        </div>
       </ScrollDiv>
     </AppViewWrapper>
   ) : null;
@@ -125,20 +137,20 @@ export const Gallery: React.FC<
 
 const styles = {
   left: (theme: Theme) => css`
-    ${theme.media.borderColumnRowLeft}
-    font-size:20px;
+    /* ${theme.media.borderColumnRowLeft} */
+    font-size: 20px;
     padding: 3rem 2rem;
     align-items: flex-start;
 
     @media ${theme.media.minWidth1000} {
       font-size: 2.08333vw;
       font-size: calc(var(--vw, 1vw) * 2.08333);
-      padding: 3rem 8.33vw 2rem 2.5vw;
-      padding: 3rem calc(var(--vw, 1vw) * 8.33) 2rem calc(var(--vw, 1vw) * 2.5);
+      padding: 8rem 2vw 2rem 2vw;
+      padding: 8rem calc(var(--vw, 1vw) * 2) 2rem calc(var(--vw, 1vw) * 2);
     }
   `,
   right: (theme: Theme) => css`
-    ${theme.media.borderColumnRowRight}
+    /* ${theme.media.borderColumnRowRight} */
     max-height: none;
   `,
   section: css`
@@ -146,14 +158,15 @@ const styles = {
     flex-direction: column;
   `,
   about: (theme: Theme) => css`
-    font-size: 16px;
+    font-size: 14px;
 
-    @media ${theme.media.minWidth1000} {
+    /* @media ${theme.media.minWidth1000} {
       font-size: 20px;
-    }
+    } */
   `,
   title: (theme: Theme) => css`
     padding-bottom: 1rem;
+    font-size: 30px;
 
     @media ${theme.media.minWidth1000} {
       padding-bottom: 2rem;
@@ -162,6 +175,7 @@ const styles = {
   galleryWrapper: (theme: Theme) => css`
     display: flex;
     flex-direction: column;
+    width: 100%;
     &:not(:last-child) {
       margin-bottom: 4rem;
     }
@@ -217,13 +231,12 @@ const styles = {
 export type GalleryContent = {
   title: string;
   date: string;
+  material: string;
   about: React.ReactNode;
   gallery: {
     img: string;
     thumb: string;
-    size: string;
-    material: string;
-    date: string;
+
     dimensions: { width: string; height: string };
   }[];
 };

@@ -13,7 +13,6 @@ import "react-image-lightbox/style.css";
 import { App } from "./App";
 import { Router } from "@reach/router";
 import { Home } from "./Views/Home";
-import { TurboSculpture } from "./Views/TurboSculpture";
 import { About } from "./Views/About";
 import { Work } from "./Views/Work";
 import { Work as workCopy } from "./Copy/Copy";
@@ -40,7 +39,15 @@ const Apapa = () => {
             <About path="/about" navHeight={navHeight} />
             <Contact path="/contact" />
             <Statement path="/statement" />
-            <Projects path="projects" />
+            <Projects path="projects" copy={workCopy} />
+            {workCopy.map((work) => (
+              <Gallery
+                path={`projects/${work.path}`}
+                content={work.work}
+                navHeight={navHeight}
+              />
+            ))}
+
             {/* <Work path="/work" content={workCopy} />
             {workCopy.sections.map((section) => {
               return section.works.map((work) => {
