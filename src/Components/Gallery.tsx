@@ -120,13 +120,14 @@ export const Gallery: React.FC<
           `}
         >
           <div css={styles.title}>{content.title}</div>
-          <div
-            css={css`
-              font-size: 20px;
-              padding-bottom: 2rem;
-            `}
-          >
+          <div css={styles.about}>
             {content.date} <br /> {content.material}
+            {content.timeLength && (
+              <>
+                <br />
+                {content.timeLength}
+              </>
+            )}
           </div>
           <div css={styles.about}>{content.about}</div>
         </div>
@@ -149,14 +150,17 @@ const styles = {
       padding: 8rem calc(var(--vw, 1vw) * 2) 2rem calc(var(--vw, 1vw) * 2);
     }
   `,
+
   right: (theme: Theme) => css`
     /* ${theme.media.borderColumnRowRight} */
     max-height: none;
   `,
+
   section: css`
     display: flex;
     flex-direction: column;
   `,
+
   about: (theme: Theme) => css`
     font-size: 14px;
 
@@ -164,14 +168,16 @@ const styles = {
       font-size: 20px;
     } */
   `,
+
   title: (theme: Theme) => css`
     padding-bottom: 1rem;
-    font-size: 30px;
+    font-size: 20px;
 
     @media ${theme.media.minWidth1000} {
       padding-bottom: 2rem;
     }
   `,
+
   galleryWrapper: (theme: Theme) => css`
     display: flex;
     flex-direction: column;
@@ -186,6 +192,7 @@ const styles = {
       }
     }
   `,
+
   lightboxCaptionWrapper: css`
     display: flex;
     justify-content: center;
@@ -198,6 +205,7 @@ const styles = {
       margin-right: 1rem;
     }
   `,
+
   galleryCaptionWrapper: (theme: Theme) => css`
     display: flex;
     flex-direction: column;
@@ -212,6 +220,7 @@ const styles = {
       }
     }
   `,
+
   image: css`
     width: 100%;
     cursor: pointer;
@@ -232,6 +241,7 @@ export type GalleryContent = {
   title: string;
   date: string;
   material: string;
+  timeLength?: string;
   about: React.ReactNode;
   gallery: {
     img: string;
