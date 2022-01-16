@@ -32,7 +32,7 @@ export const Statement = (_props: RouteComponentProps) => (
       </div>
       <div
         css={css`
-          font-size: 16px;
+          font-size: 15px;
           padding-bottom: 6rem;
         `}
       >
