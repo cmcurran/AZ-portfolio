@@ -43,14 +43,14 @@ export const Contact = (_props: RouteComponentProps) => (
       <em
         css={css`
           padding-bottom: 1rem;
-          font-size: 26px;
+          font-size: 22px;
         `}
       >
         azadeh.zaghi@gmail.com
       </em>
       <em
         css={css`
-          font-size: 26px;
+          font-size: 22px;
         `}
       >
         (+46) 0736 - 346 399

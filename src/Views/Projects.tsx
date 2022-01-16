@@ -70,6 +70,10 @@ const styles = {
     font-size: 20px;
     padding: 5rem 0;
 
+    ::last-child {
+      padding-bottom: 5rem;
+    }
+
     @media (max-width: 900px) {
       font-size: 16px;
     }

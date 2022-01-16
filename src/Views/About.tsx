@@ -100,7 +100,7 @@ export const About: React.FC<
           </div>
           <div
             css={css`
-              font-size: 14px;
+              font-size: 16px;
               padding-bottom: 6rem;
             `}
           >
