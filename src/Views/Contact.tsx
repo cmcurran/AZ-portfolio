@@ -29,6 +29,7 @@ export const Contact = (_props: RouteComponentProps) => (
         /* justify-content: center; */
         width: 100%;
         text-align: center;
+        margin-top: -6rem;
       `}
     >
       <em
@@ -42,11 +43,18 @@ export const Contact = (_props: RouteComponentProps) => (
       <em
         css={css`
           padding-bottom: 1rem;
+          font-size: 26px;
         `}
       >
         azadeh.zaghi@gmail.com
       </em>
-      <em>(+46) 0736 - 346 399</em>
+      <em
+        css={css`
+          font-size: 26px;
+        `}
+      >
+        (+46) 0736 - 346 399
+      </em>
     </div>
   </div>
 );

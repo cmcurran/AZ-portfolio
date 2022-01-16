@@ -25,13 +25,15 @@ export const Statement = (_props: RouteComponentProps) => (
       <div
         css={css`
           font-size: 20px;
+          padding-bottom: 2rem;
         `}
       >
         Artist's statement
       </div>
       <div
         css={css`
-          font-size: 16px;
+          font-size: 14px;
+          padding-bottom: 6rem;
         `}
       >
         <p>

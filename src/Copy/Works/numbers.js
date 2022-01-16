@@ -1,7 +1,7 @@
 import React from "react";
 
 export const numbers = {
-  title: "Work in progress – [Numbers]",
+  title: "Work in progress – Numbers",
   date: "2021",
   material: "Painting installations",
   about: (

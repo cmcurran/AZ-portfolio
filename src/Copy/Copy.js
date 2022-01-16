@@ -58,7 +58,7 @@ export const Work = [
 
       {
         path: "Work-in-progress-Numbers",
-        title: "Work in progress – [Numbers]",
+        title: "Work in progress – Numbers",
         work: numbers,
       },
 

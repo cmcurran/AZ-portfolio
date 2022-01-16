@@ -92,7 +92,7 @@ export const App: React.FC<
           padding: 2vw;
           padding: calc(var(--vw, 1vw) * 2);
 
-          background-color: #e5e5e5;
+          background-color: #f5f3f3;
           position: fixed;
           width: 100%;
           height: 100%;
@@ -170,6 +170,7 @@ export const App: React.FC<
               flex-direction: row;
               justify-content: flex-start;
               width: 15%;
+              font-size: 16px;
             `}
           >
             <Link to="/statement">statement</Link>
@@ -193,6 +194,7 @@ export const App: React.FC<
               flex-direction: row;
               justify-content: flex-end;
               width: 15%;
+              font-size: 16px;
             `}
           >
             <InterpunctSpacer />

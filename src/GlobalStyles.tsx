@@ -60,7 +60,7 @@ export const GlobalStyles: React.FC = () => (
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -ms-box-sizing: border-box;
-        background-color: #e5e5e5;
+        background-color: #f5f3f3;
       }
 
       body {

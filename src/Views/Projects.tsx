@@ -69,6 +69,10 @@ const styles = {
     flex-direction: column;
     font-size: 20px;
     padding: 5rem 0;
+
+    @media (max-width: 900px) {
+      font-size: 16px;
+    }
   `,
 
   yearLabel: css`

@@ -93,13 +93,14 @@ export const About: React.FC<
           <div
             css={css`
               font-size: 20px;
+              padding-bottom: 2.5rem;
             `}
           >
             Biography
           </div>
           <div
             css={css`
-              font-size: 16px;
+              font-size: 14px;
               padding-bottom: 6rem;
             `}
           >
@@ -149,7 +150,9 @@ export const About: React.FC<
 
             <a
               href="CV.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
+              // download
               css={css`
                 font-weight: 500;
                 font-size: 20px;

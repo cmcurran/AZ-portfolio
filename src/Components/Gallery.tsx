@@ -182,8 +182,8 @@ const styles = {
     @media ${theme.media.minWidth1000} {
       font-size: 2.08333vw;
       font-size: calc(var(--vw, 1vw) * 2.08333);
-      padding: 8rem 2vw 2rem 2vw;
-      padding: 8rem calc(var(--vw, 1vw) * 2) 2rem calc(var(--vw, 1vw) * 2);
+      padding: 8rem 2vw 6rem 2vw;
+      padding: 8rem calc(var(--vw, 1vw) * 2) 6rem calc(var(--vw, 1vw) * 2);
     }
   `,
 
@@ -207,6 +207,7 @@ const styles = {
     /* @media ${theme.media.minWidth1000} {
       font-size: 20px;
     } */
+    padding-bottom: 1rem;
   `,
 
   title: (theme: Theme) => css`
@@ -228,7 +229,7 @@ const styles = {
 
     @media ${theme.media.minWidth1000} {
       &:not(:last-child) {
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
       }
     }
   `,
