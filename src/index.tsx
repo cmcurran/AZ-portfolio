@@ -14,7 +14,6 @@ import { App } from "./App";
 import { Router } from "@reach/router";
 import { Home } from "./Views/Home";
 import { About } from "./Views/About";
-import { Work } from "./Views/Work";
 import { Work as workCopy } from "./Copy/Copy";
 import { Gallery, GalleryContent } from "./Components/Gallery";
 import { Placeholder } from "./Components/Placeholder";

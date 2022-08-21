@@ -126,15 +126,21 @@ export const Gallery: React.FC<
       >
         {content.gallery.map((item, i) => (
           <div css={styles.galleryWrapper}>
-            <ImageRenderer
-              img={item.img}
-              thumb={item.thumb}
-              dimensions={item.dimensions}
-              onClick={() => {
-                setPhotoIndex(i);
-                setOpen(true);
-              }}
-            />
+            {item.img && item.thumb && item.dimensions ? (
+              <ImageRenderer
+                img={item.img}
+                thumb={item.thumb}
+                dimensions={item.dimensions}
+                onClick={() => {
+                  setPhotoIndex(i);
+                  setOpen(true);
+                }}
+              />
+            ) : (
+              <video controls>
+                <source src={`/Images/${item.vid}`} type="video/mp4"></source>
+              </video>
+            )}
             {/* <div css={styles.galleryCaptionWrapper}>
               <div>{item.size}</div>
               <div>{item.material}</div>
@@ -285,9 +291,10 @@ export type GalleryContent = {
   timeLength?: string;
   about: React.ReactNode;
   gallery: {
-    img: string;
-    thumb: string;
+    img?: string;
+    vid?: string;
+    thumb?: string;
 
-    dimensions: { width: string; height: string };
+    dimensions?: { width: string; height: string };
   }[];
 };
