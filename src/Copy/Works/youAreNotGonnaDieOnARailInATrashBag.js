@@ -46,5 +46,57 @@ export const youAreNotGonnaDieOnARailInATrashBag = {
       </p>
     </>
   ),
-  gallery: [],
+  gallery: [
+    {
+      img: "youAreNotGonnaDieOnARailInATrashBag1.png",
+      thumb: "youAreNotGonnaDieOnARailInATrashBagThumb1.jpg",
+
+      dimensions: {
+        width: "1920",
+        height: "1080",
+      },
+    },
+
+    {
+      img: "youAreNotGonnaDieOnARailInATrashBag2.png",
+      thumb: "youAreNotGonnaDieOnARailInATrashBagThumb2.jpg",
+
+      dimensions: {
+        width: "1920",
+        height: "1080",
+      },
+    },
+
+    {
+      img: "youAreNotGonnaDieOnARailInATrashBag3.png",
+      thumb: "youAreNotGonnaDieOnARailInATrashBagThumb3.jpg",
+
+      dimensions: {
+        width: "1920",
+        height: "1080",
+      },
+    },
+
+    {
+      img: "youAreNotGonnaDieOnARailInATrashBag4.png",
+      thumb: "youAreNotGonnaDieOnARailInATrashBagThumb4.jpg",
+
+      dimensions: {
+        width: "1920",
+        height: "1080",
+      },
+    },
+
+    {
+      img: "youAreNotGonnaDieOnARailInATrashBag5.png",
+      thumb: "youAreNotGonnaDieOnARailInATrashBagThumb5.jpg",
+
+      dimensions: {
+        width: "1920",
+        height: "1080",
+      },
+    },
+
+    { vid: "youAreNotGonnaDieOnARailInATrashBag.MOV" },
+  ],
 };
