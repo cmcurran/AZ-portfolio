@@ -81,5 +81,65 @@ export const numbers = {
       </p>
     </>
   ),
-  gallery: [],
+  gallery: [
+    {
+      img: "numbers1.jpg",
+      thumb: "numbersThumb1.jpg",
+
+      dimensions: {
+        width: "5161",
+        height: "3563",
+      },
+    },
+
+    {
+      img: "numbers2.jpg",
+      thumb: "numbersThumb2.jpg",
+
+      dimensions: {
+        width: "1155",
+        height: "705",
+      },
+    },
+
+    {
+      img: "numbers3.jpg",
+      thumb: "numbersThumb3.jpg",
+
+      dimensions: {
+        width: "1158",
+        height: "705",
+      },
+    },
+
+    {
+      img: "numbers4.jpg",
+      thumb: "numbersThumb4.jpg",
+
+      dimensions: {
+        width: "1158",
+        height: "720",
+      },
+    },
+
+    {
+      img: "numbers5.jpg",
+      thumb: "numbersThumb5.jpg",
+
+      dimensions: {
+        width: "1146",
+        height: "708",
+      },
+    },
+
+    {
+      img: "numbers6.jpg",
+      thumb: "numbersThumb6.jpg",
+
+      dimensions: {
+        width: "1146",
+        height: "708",
+      },
+    },
+  ],
 };
