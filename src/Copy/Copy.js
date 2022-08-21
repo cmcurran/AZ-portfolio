@@ -42,6 +42,17 @@ export const About = {
 
 export const Work = [
   {
+    year: "2022",
+    work: [
+      {
+        path: "Living-in-World-War-III",
+        title: "Living in World War III",
+        work: livingInWorldWar3,
+      },
+    ],
+  },
+
+  {
     year: "2021",
     work: [
       {
@@ -60,12 +71,6 @@ export const Work = [
         path: "Work-in-progress-Numbers",
         title: "Work in progress – Numbers",
         work: numbers,
-      },
-
-      {
-        path: "Living-in-World-War-III",
-        title: "Living in World War III",
-        work: livingInWorldWar3,
       },
     ],
   },
