@@ -2,7 +2,7 @@ import React from "react";
 
 export const youAreNotGonnaDieOnARailInATrashBag = {
   title: "You are not gonna die on a rail in a trash bag",
-  date: "2021",
+  date: "Ongoing since 2013",
   material: "One channel video, loop",
   timeLength: "1 hour, 49 minutes",
   about: (

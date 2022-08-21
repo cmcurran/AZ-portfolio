@@ -49,6 +49,11 @@ export const Work = [
         title: "Living in World War III",
         work: livingInWorldWar3,
       },
+      {
+        path: "A-monument-of-the-city-to-build",
+        title: "A monument of the city to build",
+        work: aMonumentOfTheCityToBuild,
+      },
     ],
   },
 
@@ -62,12 +67,6 @@ export const Work = [
       },
 
       {
-        path: "You-are-not-gonna-die-on-a-rail-in-a-trash-bag",
-        title: "You are not gonna die on a rail in a trash bag",
-        work: youAreNotGonnaDieOnARailInATrashBag,
-      },
-
-      {
         path: "Work-in-progress-Numbers",
         title: "Work in progress – Numbers",
         work: numbers,
@@ -78,11 +77,6 @@ export const Work = [
   {
     year: "2020",
     work: [
-      {
-        path: "A-monument-of-the-city-to-build",
-        title: "A monument of the city to build",
-        work: aMonumentOfTheCityToBuild,
-      },
       {
         path: "Untrustable-Blue",
         title: "Untrustable Blue",
@@ -178,6 +172,12 @@ export const Work = [
         path: "Lullaby-for-a-second-generation-immigrant",
         title: "Lullaby for a second generation immigrant",
         work: lullabyForASecondGenerationImmigrant,
+      },
+
+      {
+        path: "You-are-not-gonna-die-on-a-rail-in-a-trash-bag",
+        title: "You are not gonna die on a rail in a trash bag",
+        work: youAreNotGonnaDieOnARailInATrashBag,
       },
     ],
   },

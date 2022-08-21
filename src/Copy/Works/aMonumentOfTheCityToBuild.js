@@ -2,7 +2,7 @@ import React from "react";
 
 export const aMonumentOfTheCityToBuild = {
   title: "A monument of the city to build",
-  date: "2020",
+  date: "2022",
   material: "",
   about: (
     <>
